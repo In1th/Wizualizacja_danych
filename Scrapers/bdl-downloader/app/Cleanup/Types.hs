@@ -81,12 +81,12 @@ data DimensionData = DimensionData
 
 data DateRange
   = MonthRange Month Month
-  | QuarterRange Quarter
+  | QuarterRange Quarter Quarter
   | YearRange Year
   deriving (Eq, Ord, Show, Generic)
   deriving (FromJSON, ToJSON) via CustomJSON '[] DateRange
 
-data VarTimeDimension = None | QuarterVar QuarterOfYear | MonthRangeVar MonthOfYear MonthOfYear deriving (Eq, Show, Ord, Generic)
+data VarTimeDimension = None | QuarterVar QuarterOfYear QuarterOfYear | MonthRangeVar MonthOfYear MonthOfYear deriving (Eq, Show, Ord, Generic)
 
 data DataRecord = DataRecord
   { _rec_attributeId :: !(Maybe AttributeId),

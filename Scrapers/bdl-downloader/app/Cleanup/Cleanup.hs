@@ -64,8 +64,8 @@ consolidateEvents = P.fold mergeEvent initCtx finalise
               (Monthly, _ : ys) -> ys
               (Quarterly, _ : ys) -> ys
         timeDim = case (subjectKind, varInfo_dimNames vi) of
-          (Monthly, td : _) -> uncurry MonthRangeVar $ textToMonthRange td
-          (Quarterly, td : _) -> QuarterVar $ textToQuarter td
+          (Monthly, td : _) -> uncurry MonthRangeVar $ textToMonths td
+          (Quarterly, td : _) -> uncurry QuarterVar $ textToQuarters td
           _ -> None
         ddInit = DimensionData measureUnit mempty
     --
@@ -85,7 +85,7 @@ consolidateEvents = P.fold mergeEvent initCtx finalise
                         dateRange = case timeDim of
                           None -> YearRange year
                           MonthRangeVar a b -> MonthRange (YearMonth year a) (YearMonth year b)
-                          QuarterVar q -> QuarterRange (YearQuarter year q)
+                          QuarterVar q q' -> QuarterRange (YearQuarter year q) (YearQuarter year q')
                         record = DataRecord attrId dateRange value
                      in record : l
                 )
@@ -102,10 +102,10 @@ consolidateEvents = P.fold mergeEvent initCtx finalise
                      . (sub_dimensions . ix dimSet)
                      . (dimData_records . at unitKtsCode)
                      %~ Just
-                     . addRecords
-                     . fromMaybe mempty
+                       . addRecords
+                       . fromMaybe mempty
                  )
-              . (cd_territorialUnitNames . at unitKtsCode ?~ unitName)
+                . (cd_territorialUnitNames . at unitKtsCode ?~ unitName)
     --
     mergeEvent cc _ = cc
 
@@ -113,35 +113,20 @@ consolidateEvents = P.fold mergeEvent initCtx finalise
     finalise cc = (cc ^. cc_data) & (cd_subjects . itraversed %~ cleanSubject)
       where
         cleanSubject :: Subject -> Subject
-        cleanSubject sub = case sub ^. sub_kind of
-          Yearly ->
-            sub
-              & sub_dimensions
-                . itraversed
-                . dimData_records
-                . itraversed
-                %~ sortRecords
-          Quarterly ->
-            sub
-              & sub_dimensions
-                . itraversed
-                . dimData_records
-                . itraversed
-                %~ sortRecords
-          Monthly ->
-            sub
-              & sub_dimensions
-                . itraversed
-                . dimData_records
-                . itraversed
-                %~ sortRecords
-                . normalizeMonthlyRecords
+        cleanSubject sub =
+          sub
+            & sub_dimensions
+              . itraversed
+              . dimData_records
+              . itraversed
+              %~ sortRecords
+                . normalizeRecords
 
         sortRecords :: [DataRecord] -> [DataRecord]
         sortRecords = sortBy (\a b -> compare (a ^. rec_dateRange) (b ^. rec_dateRange))
 
-        normalizeMonthlyRecords :: [DataRecord] -> [DataRecord]
-        normalizeMonthlyRecords records = normalizeRecord <$> records
+        normalizeRecords :: [DataRecord] -> [DataRecord]
+        normalizeRecords records = normalizeRecord <$> records
           where
             recordsByMonthRange :: Map (Month, Month) DataRecord
             recordsByMonthRange =
@@ -149,6 +134,16 @@ consolidateEvents = P.fold mergeEvent initCtx finalise
                 mapMaybe
                   ( \r -> case r ^. rec_dateRange of
                       MonthRange a b -> Just ((a, b), r)
+                      _ -> Nothing
+                  )
+                  records
+
+            recordsByQuarterRange :: Map (Quarter, Quarter) DataRecord
+            recordsByQuarterRange =
+              M.fromList $
+                mapMaybe
+                  ( \r -> case r ^. rec_dateRange of
+                      QuarterRange a b -> Just ((a, b), r)
                       _ -> Nothing
                   )
                   records
@@ -166,6 +161,17 @@ consolidateEvents = P.fold mergeEvent initCtx finalise
                             & rec_dateRange .~ MonthRange b b
                       )
                       (recordsByMonthRange M.!? (a, addMonths (-1) b))
+              QuarterRange a b
+                | a == b -> r
+                | otherwise ->
+                    maybe
+                      r
+                      ( \prevRecord ->
+                          r
+                            & rec_value %~ (\v -> v - (prevRecord ^. rec_value))
+                            & rec_dateRange .~ QuarterRange b b
+                      )
+                      (recordsByQuarterRange M.!? (a, addQuarters (-1) b))
               _ -> r
 
 determineSubjectKind :: BdlSubjectInfo -> SubjectKind
@@ -174,8 +180,8 @@ determineSubjectKind si
   | "dane kwartalne" `DT.isInfixOf` si_name si = Quarterly
   | otherwise = Yearly
 
-textToMonthRange :: Text -> (MonthOfYear, MonthOfYear)
-textToMonthRange !t = case DT.split (== '-') t of
+textToMonths :: Text -> (MonthOfYear, MonthOfYear)
+textToMonths !t = case DT.split (== '-') t of
   [a] -> (textToMonth a, textToMonth a)
   [a, b] -> (textToMonth a, textToMonth b)
   x -> error ("invalid month range: " <> show x)
@@ -196,10 +202,13 @@ textToMonth = \case
   "grudzień" -> 12
   x -> error ("invalid month: " <> x)
 
-textToQuarter :: Text -> QuarterOfYear
-textToQuarter = \case
-  "1 kwartał" -> Q1
-  "2 kwartał" -> Q2
-  "3 kwartał" -> Q3
-  "4 kwartał" -> Q4
+textToQuarters :: Text -> (QuarterOfYear, QuarterOfYear)
+textToQuarters = \case
+  "1 kwartał" -> (Q1, Q1)
+  "2 kwartał" -> (Q2, Q2)
+  "3 kwartał" -> (Q3, Q3)
+  "4 kwartał" -> (Q4, Q4)
+  "pierwsze półrocze" -> (Q1, Q2)
+  "1-3 kwartały" -> (Q1, Q3)
+  "rok" -> (Q1, Q4)
   x -> error ("invalid quarter: " <> x)
