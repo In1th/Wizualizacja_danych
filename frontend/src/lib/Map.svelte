@@ -70,13 +70,17 @@
 </svg>
 
 <style>
+   svg {
+      z-index: 10;
+      margin: 0 auto;
+   }
     path {
         cursor: pointer;
         transition: all .3s ease-in;
-        fill: rgb(61, 61, 61) !important;
+        fill: white !important;
     }
     path:hover {
-        fill: rgb(255, 0, 0) !important;
+        fill: #097a13 !important;
         transition: all .1s ease-in;
     }
 </style>
