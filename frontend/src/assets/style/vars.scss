@@ -1,0 +1,15 @@
+@use 'sass:color';
+
+:root {
+  --main-bg-colour: #463239;
+  --button-bg-colour: #{color.adjust(#463239, $lightness: 20%)};
+  --main-font-colour: #FAB3A9;
+  --green-accent-colour: #7FB285;
+  --red-accent-colour: #ED6B86;
+}
+
+$main-bg-colour: var(--main-bg-colour);
+$button-bg-colour: var(--button-bg-colour);
+$main-font-colour: var(--main-font-colour);
+$green-accent-colour: var(--green-accent-colour);
+$red-accent-colour: var(--red-accent-colour);
