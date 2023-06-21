@@ -1,11 +1,16 @@
 @use 'sass:color';
+@import "./utils/import-once";
 
-:root {
-  --main-bg-colour: #463239;
-  --button-bg-colour: #{color.adjust(#463239, $lightness: 20%)};
-  --main-font-colour: #FAB3A9;
-  --green-accent-colour: #7FB285;
-  --red-accent-colour: #ED6B86;
+@include exports('root', false) {
+
+  :root {
+    --main-bg-colour: #463239;
+    --button-bg-colour: #{color.adjust(#463239, $lightness: 20%)};
+    --main-font-colour: #FAB3A9;
+    --green-accent-colour: #7FB285;
+    --red-accent-colour: #ED6B86;
+  }
+
 }
 
 $main-bg-colour: var(--main-bg-colour);
