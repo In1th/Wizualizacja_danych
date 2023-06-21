@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="map-menu {classes}">
+<div class="d-flex flex-row gap-5 ms-5 map-menu {classes}">
 	<div class="map-container">
 		<svg
 				version="1.0"
@@ -89,7 +89,7 @@
 					id="path1312" />
 		</svg>
 	</div>
-	<div class="graph-controls">
+	<div class="d-flex flex-column gap-2 graph-controls">
 		<button class="btn bi bi-graph-up" class:active={$scatterActive} on:click={toggleScatter}></button>
 		<button class="btn bi bi-bar-chart-fill" class:active={$barActive} on:click={toggleBar}></button>
 		<button class="btn bi bi-pie-chart-fill" class:active={$pieActive} on:click={togglePie}></button>
@@ -110,8 +110,6 @@
   }
 
   .map-menu {
-	  display: flex;
-	  flex-direction: column;
     width: 600px;
   }
 
@@ -126,8 +124,6 @@
   }
 
   .graph-controls {
-    display: inline-flex;
-    gap: 10px;
     margin-top: 1rem;
 	  justify-content: center;
 
