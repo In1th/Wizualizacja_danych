@@ -94,7 +94,10 @@
 		</svg>
 	</div>
 	<div class="graph-controls">
-		<button class="graph-btn" class:active={$scatterActive} on:click={toggleScatter}>
+		<button class="bi bi-graph-up" class:active={$scatterActive} on:click={toggleScatter}></button>
+		<button class="bi bi-bar-chart-fill" class:active={$pieActive} on:click={togglePie}></button>
+		<button class="bi bi-pie-chart-fill" class:active={$barActive} on:click={toggleBar}></button>
+		<!--<button class="graph-btn" class:active={$scatterActive} on:click={toggleScatter}>
 			<svg viewBox="2 2 20 20" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd"
 				      clip-rule="evenodd"
@@ -120,7 +123,7 @@
 			<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 				<path d="M14.99 16.915c0 0 0.041-13.009 0.010-13.009-6.779 0-12 5.909-12 12.812s5.597 12.312 12.5 12.312c6.902 0 12.5-5.159 12.5-12.062 0-0.058-13.010-0.053-13.010-0.053zM29 15.906c0-6.904-6.159-12.938-13.062-12.938 0.096 0 0 12.938 0 12.938s13.062 0.038 13.062 0z"></path>
 			</svg>
-		</button>
+		</button>-->
 	</div>
 </div>
 
