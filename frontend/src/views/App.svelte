@@ -5,40 +5,40 @@ import { scatterActive } from '../store/store.js'
 import Synopsis from '../components/Synopsis.svelte'
 </script>
 
-<MapMenu classes="tl-cell" />
-<Synopsis classes="tr-cell" />
-<div class="vertical-ruler"></div>
-<div class="horizontal-ruler"></div>
+<div class="main-container">
+	<MapMenu classes="tl-cell" />
+	<Synopsis classes="tr-cell" />
+	<div class="vertical-ruler"></div>
+	<div class="horizontal-ruler"></div>
+</div>
 
-<Scatter active={$scatterActive} classes="b-row"/>
+<div class="visualization-container" style="position: absolute;top: 0;left: 0;z-index: 1;width: 100vw;height: 100vh;pointer-events: none;">
+	<Scatter active={$scatterActive}/>
+</div>
 
 <style lang="scss">
-	@import "../assets/style/vars";
-
-	:global {
-    #app {
-      display: grid;
-      grid-template-columns: 1fr 1fr 20px;
-      grid-template-rows: 1fr 1fr 20px;
-      background: $main-bg-colour;
-      height: 100%;
-    }
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 20px;
+    grid-template-rows: 1fr 1fr 20px;
+    background: $main-bg-colour;
+    height: 100vh;
 
     .tl-cell {
       grid-row: 1 / 2;
       grid-column: 1 / 2;
     }
 
-		.tr-cell {
-			grid-row: 1 / 2;
-			grid-column: 2 / 3;
-		}
+    .tr-cell {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
 
     .b-row {
       grid-row: 2 / 3;
       grid-column: 1 / 3;
     }
-	}
+  }
 
   .vertical-ruler {
     grid-row: 1 / 3;
