@@ -14,10 +14,6 @@
 	function togglePie() {
 		plot.toggle(PlotType.pie);
 	}
-
-	/*$: scatterActive = $plot === PlotType.scatter;
-	$: barActive = $plot === PlotType.bar;
-	$: pieActive = $plot === PlotType.pie;*/
 </script>
 
 <div class="map-menu {classes}">
@@ -94,36 +90,9 @@
 		</svg>
 	</div>
 	<div class="graph-controls">
-		<button class="bi bi-graph-up" class:active={$scatterActive} on:click={toggleScatter}></button>
-		<button class="bi bi-bar-chart-fill" class:active={$pieActive} on:click={togglePie}></button>
-		<button class="bi bi-pie-chart-fill" class:active={$barActive} on:click={toggleBar}></button>
-		<!--<button class="graph-btn" class:active={$scatterActive} on:click={toggleScatter}>
-			<svg viewBox="2 2 20 20" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd"
-				      clip-rule="evenodd"
-				      d="M4 4C4.55228 4 5 4.44772 5 5V18H20C20.5523 18 21 18.4477 21 19C21 19.5523 20.5523 20 20 20H4C3.44772 20 3 19.5523 3 19V5C3 4.44772 3.44772 4 4 4ZM11 10.5C11 11.3284 10.3284 12 9.5 12C8.67157 12 8 11.3284 8 10.5C8 9.67157 8.67157 9 9.5 9C10.3284 9 11 9.67157 11 10.5ZM13.5 14C14.3284 14 15 13.3284 15 12.5C15 11.6716 14.3284 11 13.5 11C12.6716 11 12 11.6716 12 12.5C12 13.3284 12.6716 14 13.5 14ZM20 5.5C20 6.32843 19.3284 7 18.5 7C17.6716 7 17 6.32843 17 5.5C17 4.67157 17.6716 4 18.5 4C19.3284 4 20 4.67157 20 5.5ZM13.5 10C14.3284 10 15 9.32843 15 8.5C15 7.67157 14.3284 7 13.5 7C12.6716 7 12 7.67157 12 8.5C12 9.32843 12.6716 10 13.5 10ZM19 12.5C19 13.3284 18.3284 14 17.5 14C16.6716 14 16 13.3284 16 12.5C16 11.6716 16.6716 11 17.5 11C18.3284 11 19 11.6716 19 12.5ZM7.5 16C8.32843 16 9 15.3284 9 14.5C9 13.6716 8.32843 13 7.5 13C6.67157 13 6 13.6716 6 14.5C6 15.3284 6.67157 16 7.5 16Z"
-				      fill="#000000"></path>
-			</svg>
-		</button>
-		<button class="graph-btn" class:active={$pieActive} on:click={togglePie}>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-					<g>
-						<path class="st0" d="M70.697,395.352h80.633c5.658,0,10.246-4.252,10.246-9.498v-143.72c0-5.246-4.588-9.499-10.246-9.499H70.697
-						c-5.658,0-10.246,4.253-10.246,9.499v143.72C60.451,391.1,65.039,395.352,70.697,395.352z" />
-						<path class="st0" d="M215.684,395.352h80.631c5.658,0,10.248-4.252,10.248-9.498V141.117c0-5.246-4.59-9.498-10.248-9.498h-80.631
-						c-5.66,0-10.248,4.252-10.248,9.498v244.736C205.436,391.1,210.024,395.352,215.684,395.352z" />
-						<path class="st0" d="M360.668,395.352h80.631c5.66,0,10.248-4.252,10.248-9.498V25.964c0-5.246-4.588-9.499-10.248-9.499h-80.631
-						c-5.66,0-10.248,4.253-10.248,9.499v359.89C350.42,391.1,355.008,395.352,360.668,395.352z" />
-						<polygon class="st0" points="495.426,438.633 16.574,438.633 0,438.633 0,495.535 16.574,495.535 495.426,495.535 512,495.535
-						512,438.633" />
-					</g>
-				</svg>
-		</button>
-		<button class="graph-btn" class:active={$barActive} on:click={toggleBar}>
-			<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-				<path d="M14.99 16.915c0 0 0.041-13.009 0.010-13.009-6.779 0-12 5.909-12 12.812s5.597 12.312 12.5 12.312c6.902 0 12.5-5.159 12.5-12.062 0-0.058-13.010-0.053-13.010-0.053zM29 15.906c0-6.904-6.159-12.938-13.062-12.938 0.096 0 0 12.938 0 12.938s13.062 0.038 13.062 0z"></path>
-			</svg>
-		</button>-->
+		<button class="btn bi bi-graph-up" class:active={$scatterActive} on:click={toggleScatter}></button>
+		<button class="btn bi bi-bar-chart-fill" class:active={$pieActive} on:click={togglePie}></button>
+		<button class="btn bi bi-pie-chart-fill" class:active={$barActive} on:click={toggleBar}></button>
 	</div>
 </div>
 
