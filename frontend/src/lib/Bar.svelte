@@ -2,7 +2,7 @@
     export let active;
 </script>
 
-<div class:active={active}>
+<div id="bar" class:active={active}>
     <svg height="auto" viewBox="0 0 2000 500" xmlns="http://www.w3.org/2000/svg">
         <path style="--no: {1}" d="M0 500h80V131.494q0-4-4-4H4q-4 0-4" fill="#ffffff"/>
         <path style="--no: {2}" d="M0 4ZM100 500h80V392.702q0-4-4-4h-72q-4 0-4" fill="#ffffff"/>
