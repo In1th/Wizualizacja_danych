@@ -5,8 +5,6 @@
 </div>
 
 <style lang="scss">
-	@import "../assets/style/vars";
-
   .synopsis {
     color: $main-font-colour;
     text-align: right;

@@ -125,8 +125,6 @@
 </div>
 
 <style lang="scss">
-  @import "../assets/style/vars";
-
   .map {
     fill: $green-accent-colour;
 
