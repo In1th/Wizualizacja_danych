@@ -91,8 +91,8 @@
 	</div>
 	<div class="graph-controls">
 		<button class="btn bi bi-graph-up" class:active={$scatterActive} on:click={toggleScatter}></button>
-		<button class="btn bi bi-bar-chart-fill" class:active={$pieActive} on:click={togglePie}></button>
-		<button class="btn bi bi-pie-chart-fill" class:active={$barActive} on:click={toggleBar}></button>
+		<button class="btn bi bi-bar-chart-fill" class:active={$barActive} on:click={toggleBar}></button>
+		<button class="btn bi bi-pie-chart-fill" class:active={$pieActive} on:click={togglePie}></button>
 	</div>
 </div>
 
