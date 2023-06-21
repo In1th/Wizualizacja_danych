@@ -25,7 +25,7 @@ import Pie from '../lib/Pie.svelte'
     display: grid;
     grid-template-columns: 1fr 1fr 20px;
     grid-template-rows: 1fr 1fr 20px;
-    background: $main-bg-colour;
+    background: #ddd;
     height: 100vh;
 
     .tl-cell {
@@ -47,12 +47,12 @@ import Pie from '../lib/Pie.svelte'
   .vertical-ruler {
     grid-row: 1 / 3;
     grid-column: 3/ 4;
-    background-color: #7FB285;
+    background-color: transparent;
   }
 
   .horizontal-ruler {
     grid-row: 3 / 4;
     grid-column: 1 / 3;
-    background-color: #7FB285;
+    background-color: transparent;
   }
 </style>

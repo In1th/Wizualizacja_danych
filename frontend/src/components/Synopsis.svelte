@@ -6,7 +6,6 @@
 
 <style lang="scss">
   .synopsis {
-    color: $main-font-colour;
     text-align: right;
     padding-right: 4rem;
     margin-top: 3rem;

@@ -38,6 +38,8 @@
     path {
         transform: translateY(500px);
         transition: all 1s ease-out;
+        fill: #9181ff;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
     }
     .active path {
         transform: translateY(0px);
