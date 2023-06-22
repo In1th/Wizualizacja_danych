@@ -6,6 +6,7 @@
     import Scatter from './lib/ScatterChartAnimation.svelte';
 
     import BarChart from './assets/charts/BarChart.svelte';
+    import PolarAreaChart from './assets/charts/PolarAreaChart.svelte';
 
     let scatter = false;
     let bar = false
@@ -55,6 +56,23 @@
     import { miasta_oferty_wielkopolskie } from './assets/charts/data/miasta_oferty/miasta_oferty_wielkopolskie';
     import { miasta_oferty_zachodniopomorskie } from './assets/charts/data/miasta_oferty/miasta_oferty_zachodniopomorskie';
 
+    import { cena_za_m2_dolnoslaskie } from './assets/charts/data/cena_za_m2/cena_za_m2_dolnoslaskie';
+    import { cena_za_m2_kujawsko_pomorskie } from './assets/charts/data/cena_za_m2/cena_za_m2_kujawsko_pomorskie';
+    import { cena_za_m2_lodzkie } from './assets/charts/data/cena_za_m2/cena_za_m2_lodzkie';
+    import { cena_za_m2_lubelskie } from './assets/charts/data/cena_za_m2/cena_za_m2_lubelskie';
+    import { cena_za_m2_lubuskie } from './assets/charts/data/cena_za_m2/cena_za_m2_lubuskie';
+    import { cena_za_m2_malopolskie } from './assets/charts/data/cena_za_m2/cena_za_m2_malopolskie';
+    import { cena_za_m2_mazowieckie } from './assets/charts/data/cena_za_m2/cena_za_m2_mazowieckie';
+    import { cena_za_m2_opolskie } from './assets/charts/data/cena_za_m2/cena_za_m2_opolskie';
+    import { cena_za_m2_podkarpackie } from './assets/charts/data/cena_za_m2/cena_za_m2_podkarpackie';
+    import { cena_za_m2_podlaskie } from './assets/charts/data/cena_za_m2/cena_za_m2_podlaskie';
+    import { cena_za_m2_pomorskie } from './assets/charts/data/cena_za_m2/cena_za_m2_pomorskie';
+    import { cena_za_m2_slaskie } from './assets/charts/data/cena_za_m2/cena_za_m2_slaskie';
+    import { cena_za_m2_swietokrzyskie } from './assets/charts/data/cena_za_m2/cena_za_m2_swietokrzyskie';
+    import { cena_za_m2_warminsko_mazurskie } from './assets/charts/data/cena_za_m2/cena_za_m2_warminsko_mazurskie';
+    import { cena_za_m2_wielkopolskie } from './assets/charts/data/cena_za_m2/cena_za_m2_wielkopolskie';
+    import { cena_za_m2_zachodniopomorskie } from './assets/charts/data/cena_za_m2/cena_za_m2_zachodniopomorskie';
+    
 
   let charts = {
     "LiczbaPokoi_Dolnyslask" : false,
@@ -89,7 +107,24 @@
     "MiastaOferty_Swietokrzyskie" : false,
     "MiastaOferty_WarminskoMazurskie" : false,
     "MiastaOferty_Wielkopolskie" : false,
-    "MiastaOferty_Zachodniopomorskie" : false
+    "MiastaOferty_Zachodniopomorskie" : false,
+
+    "CenaZaM2_Dolnyslask" : false,
+    "CenaZaM2_KujawskoPomorskie" : false,
+    "CenaZaM2_Lodzkie" : false,
+    "CenaZaM2_Lubelskie" : false,
+    "CenaZaM2_Lubuskie" : false,
+    "CenaZaM2_Malopolskie" : false,
+    "CenaZaM2_Mazowieckie" : false,
+    "CenaZaM2_Opolskie" : false,
+    "CenaZaM2_Podkarpackie" : false,
+    "CenaZaM2_Podlaskie" : false,
+    "CenaZaM2_Pomorskie" : false,
+    "CenaZaM2_Slaskie" : false,
+    "CenaZaM2_Swietokrzyskie" : false,
+    "CenaZaM2_WarminskoMazurskie" : false,
+    "CenaZaM2_Wielkopolskie" : false,
+    "CenaZaM2_Zachodniopomorskie" : false
   }
 
   const turnOffAllCharts = () => {
@@ -180,6 +215,41 @@
         visible={charts["MiastaOferty_Wielkopolskie"]}/>
     <BarChart data={miasta_oferty_zachodniopomorskie}  
         visible={charts["MiastaOferty_Zachodniopomorskie"]}/>
+
+    <!-- Cena za m2 grupowana na pokoje per wojewodztwo -->
+    <PolarAreaChart data={cena_za_m2_dolnoslaskie}
+        visible={charts["CenaZaM2_Dolnyslask"]}/>
+    <PolarAreaChart data={cena_za_m2_kujawsko_pomorskie}
+        visible={charts["CenaZaM2_KujawskoPomorskie"]}/>
+    <PolarAreaChart data={cena_za_m2_lodzkie}
+        visible={charts["CenaZaM2_Lodzkie"]}/>
+    <PolarAreaChart data={cena_za_m2_lubelskie}
+        visible={charts["CenaZaM2_Lubelskie"]}/>
+    <PolarAreaChart data={cena_za_m2_lubuskie}
+        visible={charts["CenaZaM2_Lubuskie"]}/>
+    <PolarAreaChart data={cena_za_m2_malopolskie}
+        visible={charts["CenaZaM2_Malopolskie"]}/>
+    <PolarAreaChart data={cena_za_m2_mazowieckie}
+        visible={charts["CenaZaM2_Mazowieckie"]}/>
+    <PolarAreaChart data={cena_za_m2_opolskie}
+        visible={charts["CenaZaM2_Opolskie"]}/>
+    <PolarAreaChart data={cena_za_m2_podkarpackie}
+        visible={charts["CenaZaM2_Podkarpackie"]}/>
+    <PolarAreaChart data={cena_za_m2_podlaskie}
+        visible={charts["CenaZaM2_Podlaskie"]}/>
+    <PolarAreaChart data={cena_za_m2_pomorskie}
+        visible={charts["CenaZaM2_Pomorskie"]}/>
+    <PolarAreaChart data={cena_za_m2_slaskie}
+        visible={charts["CenaZaM2_Slaskie"]}/>
+    <PolarAreaChart data={cena_za_m2_swietokrzyskie}
+        visible={charts["CenaZaM2_Swietokrzyskie"]}/>
+    <PolarAreaChart data={cena_za_m2_warminsko_mazurskie}
+        visible={charts["CenaZaM2_WarminskoMazurskie"]}/>
+    <PolarAreaChart data={cena_za_m2_wielkopolskie}
+        visible={charts["CenaZaM2_Wielkopolskie"]}/>
+    <PolarAreaChart data={cena_za_m2_zachodniopomorskie}
+        visible={charts["CenaZaM2_Zachodniopomorskie"]}/>
+
 </section>
   <section>
     <Map/>
@@ -188,7 +258,7 @@
       <button on:click={onBar}>bar</button>
     </div>
     <div>
-        <h3>Liczba pokoi</h3>
+        <p>Liczba pokoi</p>
         <button on:click={() => toggleChart("LiczbaPokoi_Dolnyslask")}>Dolny slask</button>
         <button on:click={() => toggleChart("LiczbaPokoi_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
         <button on:click={() => toggleChart("LiczbaPokoi_Lodzkie")}>Lodzkie</button>
@@ -206,7 +276,7 @@
         <button on:click={() => toggleChart("LiczbaPokoi_Wielkopolskie")}>Wielkopolskie</button>
         <button on:click={() => toggleChart("LiczbaPokoi_Zachodniopomorskie")}>Zachodniopomorskie</button>
 
-        <h3>Oferty w miastach</h3>
+        <p>Oferty w miastach</p>
         <button on:click={() => toggleChart("MiastaOferty_Dolnyslask")}>Dolny slask</button>
         <button on:click={() => toggleChart("MiastaOferty_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
         <button on:click={() => toggleChart("MiastaOferty_Lodzkie")}>Lodzkie</button>
@@ -223,6 +293,24 @@
         <button on:click={() => toggleChart("MiastaOferty_WarminskoMazurskie")}>Warminsko Mazurskie</button>
         <button on:click={() => toggleChart("MiastaOferty_Wielkopolskie")}>Wielkopolskie</button>
         <button on:click={() => toggleChart("MiastaOferty_Zachodniopomorskie")}>Zachodniopomorskie</button>
+    
+        <p>Cena za m2 per pokoje</p>
+        <button on:click={() => toggleChart("CenaZaM2_Dolnyslask")}>Dolny slask</button>
+        <button on:click={() => toggleChart("CenaZaM2_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Lodzkie")}>Lodzkie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Lubelskie")}>Lubelskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Lubuskie")}>Lubuskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Malopolskie")}>Malopolskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Mazowieckie")}>Mazowieckie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Opolskie")}>Opolskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Podkarpackie")}>Podkarpackie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Podlaskie")}>Podlaskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Pomorskie")}>Pomorskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Slaskie")}>Slaskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Swietokrzyskie")}>Swietokrzyskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_WarminskoMazurskie")}>Warminsko Mazurskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Wielkopolskie")}>Wielkopolskie</button>
+        <button on:click={() => toggleChart("CenaZaM2_Zachodniopomorskie")}>Zachodniopomorskie</button>
     </div>
   </section>
   <footer>
@@ -311,5 +399,9 @@
     background-color: rgba(255,255,255,.2);
     height: calc(100% - 8rem);
     min-width: 600px;
+  }
+  button {
+    height: 32px;
+    font-size: small;
   }
 </style>
