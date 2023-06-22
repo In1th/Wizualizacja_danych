@@ -43,6 +43,14 @@
     width: 100vw;
     z-index: -1;
     opacity: .4;
+
+	  &.active {
+		  z-index: 10;
+	  }
+  }
+
+  .points {
+	  pointer-events: all;
   }
 
   circle {
@@ -50,6 +58,11 @@
     transform: translateY(2000px);
     transition: all 1s ease-out;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+
+	  &:hover {
+		  r: 12px;
+	  }
   }
 
   .active circle {
