@@ -7,6 +7,7 @@
 
     import BarChart from './assets/charts/BarChart.svelte';
     import PolarAreaChart from './assets/charts/PolarAreaChart.svelte';
+    import PieChart from './assets/charts/PieChart.svelte';
 
     let scatter = false;
     let bar = false
@@ -73,6 +74,24 @@
     import { cena_za_m2_wielkopolskie } from './assets/charts/data/cena_za_m2/cena_za_m2_wielkopolskie';
     import { cena_za_m2_zachodniopomorskie } from './assets/charts/data/cena_za_m2/cena_za_m2_zachodniopomorskie';
     
+    import { cena_na_pokoje_dolnoslaskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_dolnoslaskie';
+    import { cena_na_pokoje_kujawsko_pomorskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_kujawsko_pomorskie';
+    import { cena_na_pokoje_lodzkie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_lodzkie';
+    import { cena_na_pokoje_lubelskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_lubelskie';
+    import { cena_na_pokoje_lubuskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_lubuskie';
+    import { cena_na_pokoje_malopolskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_malopolskie';
+    import { cena_na_pokoje_mazowieckie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_mazowieckie';
+    import { cena_na_pokoje_opolskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_opolskie';
+    import { cena_na_pokoje_podkarpackie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_podkarpackie';
+    import { cena_na_pokoje_podlaskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_podlaskie';
+    import { cena_na_pokoje_pomorskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_pomorskie';
+    import { cena_na_pokoje_slaskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_slaskie';
+    import { cena_na_pokoje_swietokrzyskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_swietokrzyskie';
+    import { cena_na_pokoje_warminsko_mazurskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_warminsko_mazurskie';
+    import { cena_na_pokoje_wielkopolskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_wielkopolskie';
+    import { cena_na_pokoje_zachodniopomorskie } from './assets/charts/data/cena_na_pokoje/cena_na_pokoje_zachodniopomorskie';
+
+    import { liczba_ofert_per_wojewodztwo } from './assets/charts/data/liczba_ofert/liczba_ofert_per_wojewodztwo';
 
   let charts = {
     "LiczbaPokoi_Dolnyslask" : false,
@@ -124,7 +143,26 @@
     "CenaZaM2_Swietokrzyskie" : false,
     "CenaZaM2_WarminskoMazurskie" : false,
     "CenaZaM2_Wielkopolskie" : false,
-    "CenaZaM2_Zachodniopomorskie" : false
+    "CenaZaM2_Zachodniopomorskie" : false,
+
+    "CenaNaPokoje_Dolnyslask" : false,
+    "CenaNaPokoje_KujawskoPomorskie" : false,
+    "CenaNaPokoje_Lodzkie" : false,
+    "CenaNaPokoje_Lubelskie" : false,
+    "CenaNaPokoje_Lubuskie" : false,
+    "CenaNaPokoje_Malopolskie" : false,
+    "CenaNaPokoje_Mazowieckie" : false,
+    "CenaNaPokoje_Opolskie" : false,
+    "CenaNaPokoje_Podkarpackie" : false,
+    "CenaNaPokoje_Podlaskie" : false,
+    "CenaNaPokoje_Pomorskie" : false,
+    "CenaNaPokoje_Slaskie" : false,
+    "CenaNaPokoje_Swietokrzyskie" : false,
+    "CenaNaPokoje_WarminskoMazurskie" : false,
+    "CenaNaPokoje_Wielkopolskie" : false,
+    "CenaNaPokoje_Zachodniopomorskie" : false,
+
+    "LiczbaOfertPerWojewodztwo": false
   }
 
   const turnOffAllCharts = () => {
@@ -250,6 +288,44 @@
     <PolarAreaChart data={cena_za_m2_zachodniopomorskie}
         visible={charts["CenaZaM2_Zachodniopomorskie"]}/>
 
+    <!-- Cena per pokoje -->
+    <PolarAreaChart data={cena_na_pokoje_dolnoslaskie}
+        visible={charts["CenaNaPokoje_Dolnyslask"]}/>
+    <PolarAreaChart data={cena_na_pokoje_kujawsko_pomorskie}
+        visible={charts["CenaNaPokoje_KujawskoPomorskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_lodzkie}
+        visible={charts["CenaNaPokoje_Lodzkie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_lubelskie}
+        visible={charts["CenaNaPokoje_Lubelskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_lubuskie}
+        visible={charts["CenaNaPokoje_Lubuskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_malopolskie}
+        visible={charts["CenaNaPokoje_Malopolskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_mazowieckie}
+        visible={charts["CenaNaPokoje_Mazowieckie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_opolskie}
+        visible={charts["CenaNaPokoje_Opolskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_podkarpackie}
+        visible={charts["CenaNaPokoje_Podkarpackie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_podlaskie}
+        visible={charts["CenaNaPokoje_Podlaskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_pomorskie}
+        visible={charts["CenaNaPokoje_Pomorskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_slaskie}
+        visible={charts["CenaNaPokoje_Slaskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_swietokrzyskie}
+        visible={charts["CenaNaPokoje_Swietokrzyskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_warminsko_mazurskie}
+        visible={charts["CenaNaPokoje_WarminskoMazurskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_wielkopolskie} 
+        visible={charts["CenaNaPokoje_Wielkopolskie"]}/>
+    <PolarAreaChart data={cena_na_pokoje_zachodniopomorskie}
+        visible={charts["CenaNaPokoje_Zachodniopomorskie"]}/>
+    
+    <!-- Liczba ofert per wojewodztwo-->
+    <PieChart data={liczba_ofert_per_wojewodztwo}
+        visible={charts["LiczbaOfertPerWojewodztwo"]}/>
+    
 </section>
   <section>
     <Map/>
@@ -257,60 +333,91 @@
       <button on:click={onScatter}>scatter connected</button>
       <button on:click={onBar}>bar</button>
     </div>
-    <div>
+    <div class="charts-buttons">
         <p>Liczba pokoi</p>
-        <button on:click={() => toggleChart("LiczbaPokoi_Dolnyslask")}>Dolny slask</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Lodzkie")}>Lodzkie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Lubelskie")}>Lubelskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Lubuskie")}>Lubuskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Malopolskie")}>Malopolskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Mazowieckie")}>Mazowieckie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Opolskie")}>Opolskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Podkarpackie")}>Podkarpackie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Podlaskie")}>Podlaskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Pomorskie")}>Pomorskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Slaskie")}>Slaskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Swietokrzyskie")}>Swietokrzyskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_WarminskoMazurskie")}>Warminsko Mazurskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Wielkopolskie")}>Wielkopolskie</button>
-        <button on:click={() => toggleChart("LiczbaPokoi_Zachodniopomorskie")}>Zachodniopomorskie</button>
+        <div>
+            <button on:click={() => toggleChart("LiczbaPokoi_Dolnyslask")}>Dolny slask</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Lodzkie")}>Lodzkie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Lubelskie")}>Lubelskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Lubuskie")}>Lubuskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Malopolskie")}>Malopolskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Mazowieckie")}>Mazowieckie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Opolskie")}>Opolskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Podkarpackie")}>Podkarpackie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Podlaskie")}>Podlaskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Pomorskie")}>Pomorskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Slaskie")}>Slaskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Swietokrzyskie")}>Swietokrzyskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_WarminskoMazurskie")}>Warminsko Mazurskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Wielkopolskie")}>Wielkopolskie</button>
+            <button on:click={() => toggleChart("LiczbaPokoi_Zachodniopomorskie")}>Zachodniopomorskie</button>
+        </div>
 
         <p>Oferty w miastach</p>
-        <button on:click={() => toggleChart("MiastaOferty_Dolnyslask")}>Dolny slask</button>
-        <button on:click={() => toggleChart("MiastaOferty_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Lodzkie")}>Lodzkie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Lubelskie")}>Lubelskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Lubuskie")}>Lubuskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Malopolskie")}>Malopolskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Mazowieckie")}>Mazowieckie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Opolskie")}>Opolskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Podkarpackie")}>Podkarpackie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Podlaskie")}>Podlaskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Pomorskie")}>Pomorskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Slaskie")}>Slaskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Swietokrzyskie")}>Swietokrzyskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_WarminskoMazurskie")}>Warminsko Mazurskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Wielkopolskie")}>Wielkopolskie</button>
-        <button on:click={() => toggleChart("MiastaOferty_Zachodniopomorskie")}>Zachodniopomorskie</button>
-    
+        <div>
+            <button on:click={() => toggleChart("MiastaOferty_Dolnyslask")}>Dolny slask</button>
+            <button on:click={() => toggleChart("MiastaOferty_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Lodzkie")}>Lodzkie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Lubelskie")}>Lubelskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Lubuskie")}>Lubuskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Malopolskie")}>Malopolskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Mazowieckie")}>Mazowieckie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Opolskie")}>Opolskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Podkarpackie")}>Podkarpackie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Podlaskie")}>Podlaskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Pomorskie")}>Pomorskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Slaskie")}>Slaskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Swietokrzyskie")}>Swietokrzyskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_WarminskoMazurskie")}>Warminsko Mazurskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Wielkopolskie")}>Wielkopolskie</button>
+            <button on:click={() => toggleChart("MiastaOferty_Zachodniopomorskie")}>Zachodniopomorskie</button>
+        </div>
+
         <p>Cena za m2 per pokoje</p>
-        <button on:click={() => toggleChart("CenaZaM2_Dolnyslask")}>Dolny slask</button>
-        <button on:click={() => toggleChart("CenaZaM2_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Lodzkie")}>Lodzkie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Lubelskie")}>Lubelskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Lubuskie")}>Lubuskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Malopolskie")}>Malopolskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Mazowieckie")}>Mazowieckie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Opolskie")}>Opolskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Podkarpackie")}>Podkarpackie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Podlaskie")}>Podlaskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Pomorskie")}>Pomorskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Slaskie")}>Slaskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Swietokrzyskie")}>Swietokrzyskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_WarminskoMazurskie")}>Warminsko Mazurskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Wielkopolskie")}>Wielkopolskie</button>
-        <button on:click={() => toggleChart("CenaZaM2_Zachodniopomorskie")}>Zachodniopomorskie</button>
+        <div>
+            <button on:click={() => toggleChart("CenaZaM2_Dolnyslask")}>Dolny slask</button>
+            <button on:click={() => toggleChart("CenaZaM2_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Lodzkie")}>Lodzkie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Lubelskie")}>Lubelskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Lubuskie")}>Lubuskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Malopolskie")}>Malopolskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Mazowieckie")}>Mazowieckie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Opolskie")}>Opolskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Podkarpackie")}>Podkarpackie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Podlaskie")}>Podlaskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Pomorskie")}>Pomorskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Slaskie")}>Slaskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Swietokrzyskie")}>Swietokrzyskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_WarminskoMazurskie")}>Warminsko Mazurskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Wielkopolskie")}>Wielkopolskie</button>
+            <button on:click={() => toggleChart("CenaZaM2_Zachodniopomorskie")}>Zachodniopomorskie</button>
+        </div>
+
+        <p>Cena na pokoje</p>
+        <div>
+            <button on:click={() => toggleChart("CenaNaPokoje_Dolnyslask")}>Dolny slask</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Lodzkie")}>Lodzkie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Lubelskie")}>Lubelskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Lubuskie")}>Lubuskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Malopolskie")}>Malopolskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Mazowieckie")}>Mazowieckie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Opolskie")}>Opolskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Podkarpackie")}>Podkarpackie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Podlaskie")}>Podlaskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Pomorskie")}>Pomorskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Slaskie")}>Slaskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Swietokrzyskie")}>Swietokrzyskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_WarminskoMazurskie")}>Warminsko Mazurskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Wielkopolskie")}>Wielkopolskie</button>
+            <button on:click={() => toggleChart("CenaNaPokoje_Zachodniopomorskie")}>Zachodniopomorskie</button>
+        </div>
+
+        <p>Inne</p>
+        <div>
+            <button on:click={() => toggleChart("LiczbaOfertPerWojewodztwo")}>Liczba ofert per wojewodztwo</button>
+        </div>
     </div>
   </section>
   <footer>
@@ -403,5 +510,11 @@
   button {
     height: 32px;
     font-size: small;
+  }
+
+  .charts-buttons {
+    height: calc(100% - 8rem);
+    min-width: 600px;
+    overflow-y: scroll;
   }
 </style>
