@@ -38,6 +38,23 @@
     import { liczba_pokoi_wielkopolskie } from './assets/charts/data/liczba_pokoi/liczba_pokoi_wielkopolskie';
     import { liczba_pokoi_zachodniopomorskie } from './assets/charts/data/liczba_pokoi/liczba_pokoi_zachodniopomorskie';
 
+    import { miasta_oferty_dolnoslaskie } from './assets/charts/data/miasta_oferty/miasta_oferty_dolnoslaskie';
+    import { miasta_oferty_kujawsko_pomorskie } from './assets/charts/data/miasta_oferty/miasta_oferty_kujawsko_pomorskie';
+    import { miasta_oferty_lodzkie } from './assets/charts/data/miasta_oferty/miasta_oferty_lodzkie';
+    import { miasta_oferty_lubelskie } from './assets/charts/data/miasta_oferty/miasta_oferty_lubelskie';
+    import { miasta_oferty_lubuskie } from './assets/charts/data/miasta_oferty/miasta_oferty_lubuskie';
+    import { miasta_oferty_malopolskie } from './assets/charts/data/miasta_oferty/miasta_oferty_malopolskie';
+    import { miasta_oferty_mazowieckie } from './assets/charts/data/miasta_oferty/miasta_oferty_mazowieckie';
+    import { miasta_oferty_opolskie } from './assets/charts/data/miasta_oferty/miasta_oferty_opolskie';
+    import { miasta_oferty_podkarpackie } from './assets/charts/data/miasta_oferty/miasta_oferty_podkarpackie';
+    import { miasta_oferty_podlaskie } from './assets/charts/data/miasta_oferty/miasta_oferty_podlaskie';
+    import { miasta_oferty_pomorskie } from './assets/charts/data/miasta_oferty/miasta_oferty_pomorskie';
+    import { miasta_oferty_slaskie } from './assets/charts/data/miasta_oferty/miasta_oferty_slaskie';
+    import { miasta_oferty_swietokrzyskie } from './assets/charts/data/miasta_oferty/miasta_oferty_swietokrzyskie';
+    import { miasta_oferty_warminsko_mazurskie } from './assets/charts/data/miasta_oferty/miasta_oferty_warminsko_mazurskie';
+    import { miasta_oferty_wielkopolskie } from './assets/charts/data/miasta_oferty/miasta_oferty_wielkopolskie';
+    import { miasta_oferty_zachodniopomorskie } from './assets/charts/data/miasta_oferty/miasta_oferty_zachodniopomorskie';
+
 
   let charts = {
     "LiczbaPokoi_Dolnyslask" : false,
@@ -55,7 +72,24 @@
     "LiczbaPokoi_Swietokrzyskie" : false,
     "LiczbaPokoi_WarminskoMazurskie" : false,
     "LiczbaPokoi_Wielkopolskie" : false,
-    "LiczbaPokoi_Zachodniopomorskie" : false
+    "LiczbaPokoi_Zachodniopomorskie" : false,
+
+    "MiastaOferty_Dolnyslask" : false,
+    "MiastaOferty_KujawskoPomorskie" : false,
+    "MiastaOferty_Lodzkie" : false,
+    "MiastaOferty_Lubelskie" : false,
+    "MiastaOferty_Lubuskie" : false,
+    "MiastaOferty_Malopolskie" : false,
+    "MiastaOferty_Mazowieckie" : false,
+    "MiastaOferty_Opolskie" : false,
+    "MiastoOferty_Podkarpackie" : false,
+    "MiastaOferty_Podlaskie" : false,
+    "MiastaOferty_Pomorskie" : false,
+    "MiastaOferty_Slaskie" : false,
+    "MiastaOferty_Swietokrzyskie" : false,
+    "MiastaOferty_WarminskoMazurskie" : false,
+    "MiastaOferty_Wielkopolskie" : false,
+    "MiastaOferty_Zachodniopomorskie" : false
   }
 
   const turnOffAllCharts = () => {
@@ -79,6 +113,7 @@
   <h1>Stan Rynku nieruchomości w Polsce</h1>
   <p>Stan na 05.2023</p>
   <section class="chartRender">
+    <!-- Liczby pokoi -->
     <BarChart data={liczba_pokoi_dolnoslaskie} 
         visible={charts["LiczbaPokoi_Dolnyslask"]}/>
     <BarChart data={liczba_pokoi_kujawsko_pomorskie} 
@@ -111,6 +146,40 @@
         visible={charts["LiczbaPokoi_Wielkopolskie"]}/>
     <BarChart data={liczba_pokoi_zachodniopomorskie}
         visible={charts["LiczbaPokoi_Zachodniopomorskie"]}/>
+
+    <!-- Oferty per miasta -->
+    <BarChart data={miasta_oferty_dolnoslaskie}
+        visible={charts["MiastaOferty_Dolnyslask"]}/>
+    <BarChart data={miasta_oferty_kujawsko_pomorskie}
+        visible={charts["MiastaOferty_KujawskoPomorskie"]}/>
+    <BarChart data={miasta_oferty_lodzkie}
+        visible={charts["MiastaOferty_Lodzkie"]}/>
+    <BarChart data={miasta_oferty_lubelskie}
+        visible={charts["MiastaOferty_Lubelskie"]}/>
+    <BarChart data={miasta_oferty_lubuskie}
+        visible={charts["MiastaOferty_Lubuskie"]}/>
+    <BarChart data={miasta_oferty_malopolskie}
+        visible={charts["MiastaOferty_Malopolskie"]}/>
+    <BarChart data={miasta_oferty_mazowieckie}
+        visible={charts["MiastaOferty_Mazowieckie"]}/>
+    <BarChart data={miasta_oferty_opolskie}
+        visible={charts["MiastaOferty_Opolskie"]}/>
+    <BarChart data={miasta_oferty_podkarpackie}
+        visible={charts["MiastaOferty_Podkarpackie"]}/>
+    <BarChart data={miasta_oferty_podlaskie}
+        visible={charts["MiastaOferty_Podlaskie"]}/>
+    <BarChart data={miasta_oferty_pomorskie}
+        visible={charts["MiastaOferty_Pomorskie"]}/>
+    <BarChart data={miasta_oferty_slaskie}  
+        visible={charts["MiastaOferty_Slaskie"]}/>
+    <BarChart data={miasta_oferty_swietokrzyskie}   
+        visible={charts["MiastaOferty_Swietokrzyskie"]}/>
+    <BarChart data={miasta_oferty_warminsko_mazurskie} 
+        visible={charts["MiastaOferty_WarminskoMazurskie"]}/>
+    <BarChart data={miasta_oferty_wielkopolskie}
+        visible={charts["MiastaOferty_Wielkopolskie"]}/>
+    <BarChart data={miasta_oferty_zachodniopomorskie}  
+        visible={charts["MiastaOferty_Zachodniopomorskie"]}/>
 </section>
   <section>
     <Map/>
@@ -136,6 +205,24 @@
         <button on:click={() => toggleChart("LiczbaPokoi_WarminskoMazurskie")}>Warminsko Mazurskie</button>
         <button on:click={() => toggleChart("LiczbaPokoi_Wielkopolskie")}>Wielkopolskie</button>
         <button on:click={() => toggleChart("LiczbaPokoi_Zachodniopomorskie")}>Zachodniopomorskie</button>
+
+        <h3>Oferty w miastach</h3>
+        <button on:click={() => toggleChart("MiastaOferty_Dolnyslask")}>Dolny slask</button>
+        <button on:click={() => toggleChart("MiastaOferty_KujawskoPomorskie")}>Kujawsko Pomorskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Lodzkie")}>Lodzkie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Lubelskie")}>Lubelskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Lubuskie")}>Lubuskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Malopolskie")}>Malopolskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Mazowieckie")}>Mazowieckie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Opolskie")}>Opolskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Podkarpackie")}>Podkarpackie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Podlaskie")}>Podlaskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Pomorskie")}>Pomorskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Slaskie")}>Slaskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Swietokrzyskie")}>Swietokrzyskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_WarminskoMazurskie")}>Warminsko Mazurskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Wielkopolskie")}>Wielkopolskie</button>
+        <button on:click={() => toggleChart("MiastaOferty_Zachodniopomorskie")}>Zachodniopomorskie</button>
     </div>
   </section>
   <footer>
