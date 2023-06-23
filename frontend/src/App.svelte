@@ -18,7 +18,7 @@ import Map from './lib/Map.svelte';
   }
 </script>
 
-<div id='bg'></div>
+<!--<div id='bg'></div>
 <div id='bg-overlay-1' data-active={trigger}></div>
 <div id='bg-overlay-2' data-active={trigger}></div>
 <main>
@@ -34,10 +34,10 @@ import Map from './lib/Map.svelte';
   <footer>
     <b>2023, made by Mateusz Kruk</b>
   </footer>
-</main>
+</main>-->
 
-<Scatter active={scatter}/>
-<Bar active={bar}/>
+<!--<Scatter active={scatter}/>-->
+<!--<Bar active={bar}/>-->
 <!-- <Pie/> -->
 
 <style>
