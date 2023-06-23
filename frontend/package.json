@@ -24,6 +24,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
-    "chartjs": "^0.3.24"
+    "chartjs": "^0.3.24",
+    "svelte-chartjs": "^3.1.2"
   }
 }
