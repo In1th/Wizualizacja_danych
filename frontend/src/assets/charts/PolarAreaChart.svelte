@@ -25,6 +25,7 @@
 
 <style>
     .chart-container {
+        position: relative;
         z-index: 80;
         display: flex !important;
     }

@@ -6,9 +6,10 @@ import MapMenu from '../components/MapMenu.svelte'
 import Synopsis from '../components/Synopsis.svelte'
     import BarChartAnimation from '../lib/BarChartAnimation.svelte';
     import ChartList from '../lib/ChartList.svelte';
+    import PaperChartAnimation from '../lib/PaperChartAnimation.svelte';
     import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte';
     import { chartData, currentChart, currentType } from '../store/chartStore';
-    import { barActive, scatterActive } from '../store/store';
+    import { barActive, resetActive, scatterActive } from '../store/store';
 </script>
 
 <div class="main-container">
@@ -35,6 +36,7 @@ import Synopsis from '../components/Synopsis.svelte'
 <div class="visualization-container" style="position: absolute;top: 0;left: 0;z-index: 1;width: 100vw;height: 100vh;pointer-events: none;">
 	<ScatterChartAnimation active={$scatterActive}/>
 	<BarChartAnimation active={$barActive}/>
+	<PaperChartAnimation active={$resetActive}/>
 </div>
 
 <style lang="scss">

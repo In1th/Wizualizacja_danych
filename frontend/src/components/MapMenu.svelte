@@ -116,7 +116,7 @@
   .map {
     //fill: $green-accent-colour;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,.1));
-	z-index: 100;
+	
 
 	  path {
       fill: #fff;
@@ -135,6 +135,7 @@
 
   .map-menu {
     width: 600px;
+	z-index: 100;
   }
 
   .map-container {
