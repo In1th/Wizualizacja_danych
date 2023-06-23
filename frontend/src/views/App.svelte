@@ -8,7 +8,7 @@ import Synopsis from '../components/Synopsis.svelte'
     import ChartList from '../lib/ChartList.svelte';
     import PaperChartAnimation from '../lib/PaperChartAnimation.svelte';
     import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte';
-    import { chartData, currentChart, currentType } from '../store/chartStore';
+    import { chartData, currentType } from '../store/chartStore';
     import { barActive, resetActive, scatterActive } from '../store/store';
 </script>
 
@@ -19,7 +19,7 @@ import Synopsis from '../components/Synopsis.svelte'
   </div>
   <div id="main-right">
     <Synopsis/>
-    <div>
+    <div id="chart-div">
       {#if $currentType === 'bar'}
           <BarChart data={$chartData}/>
         {/if}
@@ -49,9 +49,19 @@ import Synopsis from '../components/Synopsis.svelte'
       display: flex;
       flex-direction: column;
       width: 50%;
+      padding: 1rem;
     }
   }
   #main-left {
     align-items: center;
+  }
+  #main-right {
+    background-color: #ddd;
+  }
+  #chart-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: auto;
   }
 </style>
