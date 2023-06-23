@@ -4,8 +4,6 @@
     import { mapStore } from '../store/mapStore.js';
 	import { barActive, resetActive, plot, scatterActive } from '../store/store.js'
 
-	export let classes: string;
-
 	function toggleScatter() {
 		plot.toggle('scatter');
 	}
@@ -19,7 +17,7 @@
 	}
 </script>
 
-<div class="d-flex flex-row gap-5 ms-5 map-menu {classes}">
+<div class="d-flex flex-row gap-5 ms-5 map-menu">
 	<div class="map-container">
 		<svg
 				preserveAspectRatio="xMaxYMax meet" style="width: 30vw;" viewBox="0 0 497 463"
@@ -118,6 +116,7 @@
   .map {
     //fill: $green-accent-colour;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,.1));
+	z-index: 100;
 
 	  path {
       fill: #fff;
