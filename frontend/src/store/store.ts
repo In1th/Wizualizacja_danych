@@ -1,13 +1,12 @@
 import { derived, writable } from 'svelte/store'
 
-export enum PlotType {
-	scatter,
-	bar,
-	pie
-}
+export type PlotType =
+	'scatter'
+	| 'bar'
+	| 'reset'
 
 export const plot = (() => {
-	const { subscribe, set } = writable(PlotType.scatter);
+	const { subscribe, set } = writable('scatter' as PlotType);
 
 	function toggle(plot: PlotType) {
 		console.log('enabled', plot)
@@ -20,6 +19,6 @@ export const plot = (() => {
 	}
 })();
 
-export const scatterActive = derived(plot, $plot => $plot === PlotType.scatter)
-export const barActive = derived(plot, $plot => $plot === PlotType.bar)
-export const pieActive = derived(plot, $plot => $plot === PlotType.pie)
+export const scatterActive = derived(plot, $plot => $plot === 'scatter')
+export const barActive = derived(plot, $plot => $plot === 'bar')
+export const resetActive = derived(plot, $plot => $plot === 'reset')

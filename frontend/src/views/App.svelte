@@ -1,10 +1,9 @@
 <script lang="ts">
 import MapMenu from '../components/MapMenu.svelte'
 import Scatter from '../lib/Scatter.svelte'
-import { pieActive, barActive, scatterActive } from '../store/store.js'
+import { resetActive, barActive, scatterActive } from '../store/store.js'
 import Synopsis from '../components/Synopsis.svelte'
 import Bar from '../lib/Bar.svelte'
-import Pie from '../lib/Pie.svelte'
 </script>
 
 <div class="main-container">
@@ -17,7 +16,6 @@ import Pie from '../lib/Pie.svelte'
 <div class="visualization-container" style="position: absolute;top: 0;left: 0;z-index: 1;width: 100vw;height: 100vh;pointer-events: none;">
 	<Scatter active={$scatterActive}/>
 	<Bar active={$barActive}/>
-	<Pie active={$pieActive}/>
 </div>
 
 <style lang="scss">
