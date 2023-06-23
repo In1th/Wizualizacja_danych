@@ -3,8 +3,7 @@ export const cena_na_pokoje_malopolskie = {
         '1 pokój',
         '2 pokoje',
         '3 pokoje',
-        '4 pokoje',
-        '6 pokoi'
+        '4 pokoje'
     ],
     datasets: [
         {

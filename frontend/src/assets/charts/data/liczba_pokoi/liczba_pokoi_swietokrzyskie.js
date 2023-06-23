@@ -1,4 +1,5 @@
 export const liczba_pokoi_swietokrzyskie = {
+    labels: [0, 1, 2, 3, 4, 6, 7],
     datasets: [
         {
             label: '2 pokoje',

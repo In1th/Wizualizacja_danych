@@ -1,8 +1,9 @@
 export const liczba_pokoi_dolnoslaskie = {
+    labels: [0, 1, 2, 3, 4, 6, 7],
     datasets: [
         {
             label: '1 pokój',
-            data: [{x: 1, y: 914, r: 10}],
+            data: [{x: 1, y: 914, r: 100}],
             backgroundColor: 'rgba(194, 116, 161, 0.5)',
             hoverBackgroundColor: 'rgb(194, 116, 161)',
         },
