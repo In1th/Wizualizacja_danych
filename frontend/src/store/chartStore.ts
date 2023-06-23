@@ -17,6 +17,7 @@ import { liczba_pokoi_swietokrzyskie } from '../assets/charts/data/liczba_pokoi/
 import { liczba_pokoi_warminskomazurskie } from '../assets/charts/data/liczba_pokoi/liczba_pokoi_warminskomazurskie';
 import { liczba_pokoi_wielkopolskie } from '../assets/charts/data/liczba_pokoi/liczba_pokoi_wielkopolskie';
 import { liczba_pokoi_zachodniopomorskie } from '../assets/charts/data/liczba_pokoi/liczba_pokoi_zachodniopomorskie';
+import { liczba_pokoi_ogolnie } from "../assets/charts/data/liczba_pokoi/liczba_pokoi_ogolnie";
 import { miasta_oferty_dolnoslaskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_dolnoslaskie';
 import { miasta_oferty_kujawskopomorskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_kujawsko_pomorskie';
 import { miasta_oferty_lodzkie } from '../assets/charts/data/miasta_oferty/miasta_oferty_lodzkie';
@@ -49,6 +50,7 @@ import { cena_za_m2_swietokrzyskie } from '../assets/charts/data/cena_za_m2/cena
 import { cena_za_m2_warminsko_mazurskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_warminsko_mazurskie';
 import { cena_za_m2_wielkopolskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_wielkopolskie';
 import { cena_za_m2_zachodniopomorskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_zachodniopomorskie';
+import { cena_za_m2_ogolnie } from "../assets/charts/data/cena_za_m2/cena_za_m2_ogolnie";
 import { cena_na_pokoje_dolnoslaskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_dolnoslaskie';
 import { cena_na_pokoje_kujawsko_pomorskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_kujawsko_pomorskie';
 import { cena_na_pokoje_lodzkie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_lodzkie';
@@ -65,6 +67,7 @@ import { cena_na_pokoje_swietokrzyskie } from '../assets/charts/data/cena_na_pok
 import { cena_na_pokoje_warminsko_mazurskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_warminsko_mazurskie';
 import { cena_na_pokoje_wielkopolskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_wielkopolskie';
 import { cena_na_pokoje_zachodniopomorskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_zachodniopomorskie';
+import { cena_na_pokoje_ogolnie } from "../assets/charts/data/cena_na_pokoje/cena_na_pokoje_ogolnie";
 import { liczba_ofert_per_wojewodztwo } from '../assets/charts/data/liczba_ofert/liczba_ofert_per_wojewodztwo';
 
 export type ChartVisible  =
@@ -73,6 +76,9 @@ export type ChartVisible  =
   | 'cena za m2'
   | 'cena za pokoje'
   | 'liczba ofert per wojewodztwo'
+  | 'cena za pokoje ogolnie'
+  | 'cena za m2 ogolnie'
+  | 'liczba pokoi ogolnie'
 
 export type ChartType = 
   'polar area'
@@ -87,6 +93,9 @@ const chartMap: {[key: string]: ChartType} = {
     'cena za m2' : 'polar area',
     'cena za pokoje' : 'connected scatter',
     'liczba ofert per wojewodztwo' : 'pie',
+    'cena za pokoje ogolnie' : 'connected scatter',
+    'cena za m2 ogolnie' : 'polar area',
+    'liczba pokoi ogolnie' : 'bubble'
 }
 
 const dataMap = {
@@ -106,6 +115,7 @@ const dataMap = {
     'liczba pokoi zachodniopomorskie': liczba_pokoi_zachodniopomorskie,
     'liczba pokoi warminskomazurskie': liczba_pokoi_warminskomazurskie,
     'liczba pokoi pomorskie': liczba_pokoi_pomorskie,
+    'liczba pokoi ogolnie': liczba_pokoi_ogolnie,
 
     'miasta oferty podkarpackie': miasta_oferty_podkarpackie,
     'miasta oferty malopolskie': miasta_oferty_malopolskie,
@@ -140,6 +150,7 @@ const dataMap = {
     'cena za m2 zachodniopomorskie': cena_za_m2_zachodniopomorskie,
     'cena za m2 warminskomazurskie': cena_za_m2_warminsko_mazurskie,
     'cena za m2 pomorskie': cena_za_m2_pomorskie,
+    'cena za m2 ogolnie': cena_za_m2_ogolnie,
 
     'cena za pokoje podkarpackie': cena_na_pokoje_podkarpackie,
     'cena za pokoje malopolskie': cena_na_pokoje_malopolskie,
@@ -157,6 +168,7 @@ const dataMap = {
     'cena za pokoje zachodniopomorskie': cena_na_pokoje_zachodniopomorskie,
     'cena za pokoje warminskomazurskie': cena_na_pokoje_warminsko_mazurskie,
     'cena za pokoje pomorskie': cena_na_pokoje_pomorskie,
+    'cena za pokoje ogolnie': cena_na_pokoje_ogolnie,
     
     'liczba ofert per wojewodztwo podkarpackie': liczba_ofert_per_wojewodztwo,
     'liczba ofert per wojewodztwo malopolskie': liczba_ofert_per_wojewodztwo,

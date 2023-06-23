@@ -1,5 +1,5 @@
 export const liczba_pokoi_podlaskie = {
-    labels: [0, 1, 2, 3, 4, 6, 7],
+    labels: [0, 1, 2, 3, 4, 5, 6, 7],
     datasets: [
         {
             label: '1 pokój',
