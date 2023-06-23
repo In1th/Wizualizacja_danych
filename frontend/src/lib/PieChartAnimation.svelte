@@ -1,4 +1,8 @@
-<div>
+<script>
+    export let active;
+</script>
+
+<div id="pie" class:active={active}>
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="highcharts-root" style="font-family: Roboto; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="650" height="400" viewBox="0 0 650 400" aria-label="Interactive chart" aria-hidden="false">
         <g class="highcharts-series-group" data-z-index="3" aria-hidden="false">
             <g class="highcharts-series highcharts-series-0 highcharts-pie-series" data-z-index="0.1" opacity="1" transform="translate(10,47) scale(1 1)" clip-path="none" aria-hidden="false">
@@ -11,10 +15,16 @@
     </svg>
 </div>
 
-<style>
-    div {
+<style lang="scss">
+    #pie {
         position: absolute;
-        top: 0px;
-        left: 0px;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: opacity 0.4s;
+
+        &.active {
+            opacity: 1;
+        }
     }
 </style>

@@ -179,7 +179,7 @@
 
 </script>
 
-<div id='bg'></div>
+<!--<div id='bg'></div>
 <div id='bg-overlay-1' data-active={trigger}></div>
 <div id='bg-overlay-2' data-active={trigger}></div>
 <main>
@@ -425,9 +425,8 @@
   </footer>
 </main>
 
-
-<Scatter active={scatter}/>
-<Bar active={bar}/>
+<!--<Scatter active={scatter}/>-->
+<!--<Bar active={bar}/>-->
 <!-- <Pie/> -->
 
 <style>

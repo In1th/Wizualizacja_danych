@@ -2,7 +2,7 @@
     export let active;
 </script>
 
-<div class:active={active}>
+<div id="bar" class:active={active}>
     <svg height="auto" viewBox="0 0 2000 500" xmlns="http://www.w3.org/2000/svg">
         <path style="--no: {1}" d="M0 500h80V131.494q0-4-4-4H4q-4 0-4" fill="#ffffff"/>
         <path style="--no: {2}" d="M0 4ZM100 500h80V392.702q0-4-4-4h-72q-4 0-4" fill="#ffffff"/>
@@ -27,17 +27,32 @@
     </svg>
 </div>
 
-<style>
-    div {
+<style lang="scss">
+    #bar {
         position: absolute;
-        bottom: 0px;
+        bottom: 0;
         width: 100vw;
         z-index: -1;
         opacity: .4;
+
+        svg {
+            pointer-events: all;
+        }
+
+        &.active {
+            z-index: 10;
+        }
     }
     path {
         transform: translateY(500px);
         transition: all 1s ease-out;
+        fill: #9181ff;
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+        cursor: pointer;
+
+        &:hover {
+            fill: #5137ff;
+        }
     }
     .active path {
         transform: translateY(0px);
