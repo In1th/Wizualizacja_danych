@@ -41,7 +41,7 @@
     position: absolute;
     bottom: 0;
     width: 100vw;
-    z-index: -1;
+    z-index: 7;
     opacity: .4;
 
 	  &.active {
