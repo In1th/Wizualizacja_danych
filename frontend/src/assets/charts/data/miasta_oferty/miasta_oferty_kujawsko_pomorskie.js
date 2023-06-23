@@ -1,4 +1,4 @@
-export const miasta_oferty_kujawsko_pomorskie = {
+export const miasta_oferty_kujawskopomorskie = {
     labels: [
         'Aleksandrów Kujawski',
         'Bydgoszcz',

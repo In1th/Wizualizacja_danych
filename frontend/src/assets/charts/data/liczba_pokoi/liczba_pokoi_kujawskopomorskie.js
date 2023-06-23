@@ -1,4 +1,4 @@
-export const liczba_pokoi_kujawsko_pomorskie = {
+export const liczba_pokoi_kujawskopomorskie = {
     labels: [
         '2 pokoje',
         '3 pokoje'

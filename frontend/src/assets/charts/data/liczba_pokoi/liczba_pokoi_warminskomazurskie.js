@@ -1,4 +1,4 @@
-export const liczba_pokoi_warminsko_mazurskie = {
+export const liczba_pokoi_warminskomazurskie = {
     labels: [
         '2 pokoje',
         '3 pokoje'

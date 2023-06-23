@@ -1,4 +1,4 @@
-export const cena_za_m2_kujawsko_pomorskie = {
+export const cena_za_m2_kujawskopomorskie = {
     labels: [
         '2 pokoje',
         '3 pokoje'

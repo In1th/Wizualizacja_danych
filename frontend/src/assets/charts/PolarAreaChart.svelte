@@ -2,7 +2,6 @@
     import { PolarArea } from 'svelte-chartjs';
     import { chart_css } from './chart_css.js';
 
-    export let visible;
     export let data;
 
     import {
@@ -19,7 +18,6 @@
 </script>
 
 <div class="chart-container"
-    class:visible={visible}
     style = 
         "width: {chart_css.width};">
     <PolarArea {data} options={{ responsive: true }} />
@@ -27,10 +25,7 @@
 
 <style>
     .chart-container {
-        display: none;
-    }
-
-    .visible {
+        z-index: 80;
         display: flex !important;
     }
 </style> 

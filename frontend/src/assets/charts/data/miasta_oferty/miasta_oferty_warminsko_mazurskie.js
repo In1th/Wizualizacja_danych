@@ -1,4 +1,4 @@
-export const miasta_oferty_warminsko_mazurskie = {
+export const miasta_oferty_warminskomazurskie = {
     labels: [
         'Bartoszyce',
         'Działdowo',

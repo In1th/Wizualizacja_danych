@@ -6,7 +6,7 @@ export type PlotType =
 	| 'reset'
 
 export const plot = (() => {
-	const { subscribe, set } = writable('scatter' as PlotType);
+	const { subscribe, set } = writable('reset' as PlotType);
 
 	function toggle(plot: PlotType) {
 		console.log('enabled', plot)
