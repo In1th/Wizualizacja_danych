@@ -1,16 +1,28 @@
 export const liczba_pokoi_lubelskie = {
-    labels: [
-        '2 pokoje',
-        '3 pokoje',
-        '4 pokoje',
-        '5 pokoi'
-    ],
     datasets: [
         {
-            label: 'Ilość ofert w zależności od ilości pokoi',
-            backgroundColor: 'rgba(194, 116, 161, 0.5)',
-            borderColor: 'rgb(194, 116, 161)',
-            data: [3396, 2066, 1136, 1054],
-        }
-    ],
+            label: '2 pokoje',
+            data: [{x: 2, y: 3396, r: 10}],
+            backgroundColor: 'rgba(255, 206, 86, 0.5)',
+            hoverBackgroundColor: 'rgb(255, 206, 86)',
+        },
+        {
+            label: '3 pokoje',
+            data: [{x: 3, y: 2066, r: 10}],
+            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            hoverBackgroundColor: 'rgb(75, 192, 192)',
+        },
+        {
+            label: '4 pokoje',
+            data: [{x: 4, y: 1136, r: 10}],
+            backgroundColor: 'rgba(153, 102, 255, 0.5)',
+            hoverBackgroundColor: 'rgb(153, 102, 255)',
+        },
+        {
+            label: '5 pokoi',
+            data: [{x: 5, y: 1054, r: 10}],
+            backgroundColor: 'rgba(255, 159, 64, 0.5)',
+            hoverBackgroundColor: 'rgb(255, 159, 64)',
+        },
+    ]
 };

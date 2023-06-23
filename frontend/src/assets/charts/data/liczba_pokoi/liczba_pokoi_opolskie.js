@@ -1,13 +1,10 @@
 export const liczba_pokoi_opolskie = {
-    labels: [
-        '3 pokoje'
-    ],
     datasets: [
         {
-            label: 'Ilość ofert w zależności od ilości pokoi',
-            backgroundColor: 'rgba(194, 116, 161, 0.5)',
-            borderColor: 'rgb(194, 116, 161)',
-            data: [336],
+            label: '3 pokoje',
+            data: [{x: 3, y: 336, r: 10}],
+            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            hoverBackgroundColor: 'rgb(75, 192, 192)',
         }
-    ],
+    ]
 };

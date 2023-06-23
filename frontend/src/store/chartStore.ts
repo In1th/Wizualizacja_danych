@@ -78,12 +78,14 @@ export type ChartType =
   'polar area'
   | 'bar'
   | 'pie'
+  | 'bubble'
+  | 'connected scatter'
 
 const chartMap: {[key: string]: ChartType} = {
-    'liczba pokoi' : 'bar',
+    'liczba pokoi' : 'bubble',
     'miasta oferty' : 'bar',
     'cena za m2' : 'polar area',
-    'cena za pokoje' : 'polar area',
+    'cena za pokoje' : 'connected scatter',
     'liczba ofert per wojewodztwo' : 'pie',
 }
 
