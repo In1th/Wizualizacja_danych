@@ -18,6 +18,7 @@ import { liczba_pokoi_warminskomazurskie } from '../assets/charts/data/liczba_po
 import { liczba_pokoi_wielkopolskie } from '../assets/charts/data/liczba_pokoi/liczba_pokoi_wielkopolskie';
 import { liczba_pokoi_zachodniopomorskie } from '../assets/charts/data/liczba_pokoi/liczba_pokoi_zachodniopomorskie';
 import { liczba_pokoi_ogolnie } from "../assets/charts/data/liczba_pokoi/liczba_pokoi_ogolnie";
+
 import { miasta_oferty_dolnoslaskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_dolnoslaskie';
 import { miasta_oferty_kujawskopomorskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_kujawsko_pomorskie';
 import { miasta_oferty_lodzkie } from '../assets/charts/data/miasta_oferty/miasta_oferty_lodzkie';
@@ -34,6 +35,7 @@ import { miasta_oferty_swietokrzyskie } from '../assets/charts/data/miasta_ofert
 import { miasta_oferty_warminskomazurskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_warminsko_mazurskie';
 import { miasta_oferty_wielkopolskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_wielkopolskie';
 import { miasta_oferty_zachodniopomorskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_zachodniopomorskie';
+
 import { cena_za_m2_dolnoslaskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_dolnoslaskie';
 import { cena_za_m2_kujawskopomorskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_kujawsko_pomorskie';
 import { cena_za_m2_lodzkie } from '../assets/charts/data/cena_za_m2/cena_za_m2_lodzkie';
@@ -51,6 +53,7 @@ import { cena_za_m2_warminsko_mazurskie } from '../assets/charts/data/cena_za_m2
 import { cena_za_m2_wielkopolskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_wielkopolskie';
 import { cena_za_m2_zachodniopomorskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_zachodniopomorskie';
 import { cena_za_m2_ogolnie } from "../assets/charts/data/cena_za_m2/cena_za_m2_ogolnie";
+
 import { cena_na_pokoje_dolnoslaskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_dolnoslaskie';
 import { cena_na_pokoje_kujawsko_pomorskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_kujawsko_pomorskie';
 import { cena_na_pokoje_lodzkie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_lodzkie';
@@ -68,6 +71,7 @@ import { cena_na_pokoje_warminsko_mazurskie } from '../assets/charts/data/cena_n
 import { cena_na_pokoje_wielkopolskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_wielkopolskie';
 import { cena_na_pokoje_zachodniopomorskie } from '../assets/charts/data/cena_na_pokoje/cena_na_pokoje_zachodniopomorskie';
 import { cena_na_pokoje_ogolnie } from "../assets/charts/data/cena_na_pokoje/cena_na_pokoje_ogolnie";
+
 import { liczba_ofert_per_wojewodztwo } from '../assets/charts/data/liczba_ofert/liczba_ofert_per_wojewodztwo';
 
 export type ChartVisible  =
@@ -115,7 +119,23 @@ const dataMap = {
     'liczba pokoi zachodniopomorskie': liczba_pokoi_zachodniopomorskie,
     'liczba pokoi warminskomazurskie': liczba_pokoi_warminskomazurskie,
     'liczba pokoi pomorskie': liczba_pokoi_pomorskie,
-    'liczba pokoi ogolnie': liczba_pokoi_ogolnie,
+
+    'liczba pokoi ogolnie podkarpackie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie malopolskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie slaskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie opolskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie dolnoslaskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie swietokrzyskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie lubelskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie lodzkie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie mazowieckie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie wielkopolskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie lubuskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie kujawskopomorskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie podlaskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie zachodniopomorskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie warminskomazurskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie pomorskie': liczba_pokoi_ogolnie,
 
     'miasta oferty podkarpackie': miasta_oferty_podkarpackie,
     'miasta oferty malopolskie': miasta_oferty_malopolskie,
@@ -150,7 +170,23 @@ const dataMap = {
     'cena za m2 zachodniopomorskie': cena_za_m2_zachodniopomorskie,
     'cena za m2 warminskomazurskie': cena_za_m2_warminsko_mazurskie,
     'cena za m2 pomorskie': cena_za_m2_pomorskie,
-    'cena za m2 ogolnie': cena_za_m2_ogolnie,
+
+    'cena za m2 ogolnie podkarpackie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie malopolskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie slaskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie opolskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie dolnoslaskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie swietokrzyskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie lubelskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie lodzkie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie mazowieckie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie wielkopolskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie lubuskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie kujawskopomorskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie podlaskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie zachodniopomorskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie warminskomazurskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie pomorskie': cena_za_m2_ogolnie,
 
     'cena za pokoje podkarpackie': cena_na_pokoje_podkarpackie,
     'cena za pokoje malopolskie': cena_na_pokoje_malopolskie,
@@ -168,7 +204,23 @@ const dataMap = {
     'cena za pokoje zachodniopomorskie': cena_na_pokoje_zachodniopomorskie,
     'cena za pokoje warminskomazurskie': cena_na_pokoje_warminsko_mazurskie,
     'cena za pokoje pomorskie': cena_na_pokoje_pomorskie,
-    'cena za pokoje ogolnie': cena_na_pokoje_ogolnie,
+
+    'cena za pokoje ogolnie podkarpackie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie malopolskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie slaskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie opolskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie dolnoslaskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie swietokrzyskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie lubelskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie lodzkie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie mazowieckie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie wielkopolskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie lubuskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie kujawskopomorskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie podlaskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie zachodniopomorskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie warminskomazurskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie pomorskie': cena_na_pokoje_ogolnie,
     
     'liczba ofert per wojewodztwo podkarpackie': liczba_ofert_per_wojewodztwo,
     'liczba ofert per wojewodztwo malopolskie': liczba_ofert_per_wojewodztwo,
@@ -185,7 +237,7 @@ const dataMap = {
     'liczba ofert per wojewodztwo podlaskie': liczba_ofert_per_wojewodztwo,
     'liczba ofert per wojewodztwo zachodniopomorskie': liczba_ofert_per_wojewodztwo,
     'liczba ofert per wojewodztwo warminskomazurskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo pomorskie': liczba_ofert_per_wojewodztwo,
+    'liczba ofert per wojewodztwo pomorskie': liczba_ofert_per_wojewodztwo
 }
 
 export const currentChart = writable('liczba ofert per wojewodztwo' as ChartVisible)

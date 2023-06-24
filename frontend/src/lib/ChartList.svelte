@@ -16,9 +16,9 @@
         <button on:click={() => changeChart('cena za m2', 'scatter')}>Cena za m2</button>
         <button on:click={() => changeChart('cena za pokoje', 'scatter')}>Cena na pokoje</button>
         <button on:click={() => changeChart('liczba ofert per wojewodztwo', 'reset')}>Liczba ofert per wojewodztwo</button>
-        <button on:click={() => changeChart('liczba pokoi ogolnie', 'reset')}>Liczba Pokoi - Ogolnie</button>
-        <button on:click={() => changeChart('cena za m2 ogolnie', 'reset')}>Cena za m2 - Ogolnie</button>
-        <button on:click={() => changeChart('cena za pokoje ogolnie', 'reset')}>Cena na pokoje - Ogolnie</button>
+        <button on:click={() => changeChart('liczba pokoi ogolnie', 'bar')}>Liczba Pokoi - Ogolnie</button>
+        <button on:click={() => changeChart('cena za m2 ogolnie', 'scatter')}>Cena za m2 - Ogolnie</button>
+        <button on:click={() => changeChart('cena za pokoje ogolnie', 'scatter')}>Cena na pokoje - Ogolnie</button>
     </div>
 
     <h2>BDL</h2>

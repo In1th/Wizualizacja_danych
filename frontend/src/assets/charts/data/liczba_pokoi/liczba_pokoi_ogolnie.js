@@ -27,7 +27,7 @@ export const liczba_pokoi_ogolnie = {
         },
         {
             label: '5 pokoi',
-            data: [{x: 4, y: 2438, r: 10}],
+            data: [{x: 5, y: 2438, r: 10}],
             backgroundColor: 'rgba(153, 102, 255, 0.5)',
             hoverBackgroundColor: 'rgb(153, 102, 255)',
         },
