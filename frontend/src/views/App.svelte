@@ -1,21 +1,66 @@
 <script lang="ts">
-    import BarChart from '../assets/charts/BarChart.svelte';
-    import PieChart from '../assets/charts/PieChart.svelte';
-    import PolarAreaChart from '../assets/charts/PolarAreaChart.svelte';
-import MapMenu from '../components/MapMenu.svelte'
-import Synopsis from '../components/Synopsis.svelte'
-    import BarChartAnimation from '../lib/BarChartAnimation.svelte';
-    import ChartList from '../lib/ChartList.svelte';
-    import PaperChartAnimation from '../lib/PaperChartAnimation.svelte';
-    import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte';
-    import { chartData, currentType } from '../store/chartStore';
-    import { barActive, resetActive, scatterActive } from '../store/store';
+  import BarChart from '../assets/charts/BarChart.svelte'
+  import PieChart from '../assets/charts/PieChart.svelte'
+  import PolarAreaChart from '../assets/charts/PolarAreaChart.svelte'
+  import MapMenu from '../components/MapMenu.svelte'
+  import Synopsis from '../components/Synopsis.svelte'
+  import BarChartAnimation from '../lib/BarChartAnimation.svelte'
+  import ChartList from '../lib/ChartList.svelte'
+  import PaperChartAnimation from '../lib/PaperChartAnimation.svelte'
+  import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte'
+  import { chartData, type ChartVisible, currentChart, currentType } from '../store/chartStore'
+  import { barActive, plot, type PlotType, resetActive, scatterActive } from '../store/store'
+  import FiltersTree from '../components/FiltersTree.svelte'
+  import type { FilterGroup } from '../interfaces/FilterGroup'
+
+  function changeChart(ch: ChartVisible, anim: PlotType) {
+    console.log(ch, anim)
+    $currentChart = ch
+    plot.toggle(anim)
+  }
+
+  const filtersTree: FilterGroup[] = [
+    {
+      name: 'Otodom',
+      filters: [
+        {
+          default: true,
+          name: 'Liczba ofert w zależności od liczby pokoi',
+          callback: () => changeChart('liczba pokoi', 'bar')
+        },
+        {
+          default: false,
+          name: 'Liczba ofert w danym mieście',
+          callback: () => changeChart('miasta oferty', 'bar')
+        },
+        {
+          default: false,
+          html: 'Cena za <math><msup><mi>m</mi><mn>2</mn></msup></math> w zależności od liczby pokoi',
+          callback: () => changeChart('cena za m2', 'scatter')
+        },
+        {
+          default: false,
+          name: 'Cena za pokój w zależności od liczby pokoi',
+          callback: () => changeChart('cena za pokoje', 'scatter')
+        },
+        {
+          default: false,
+          name: 'Liczba ofert w każdym województwie',
+          callback: () => changeChart('liczba ofert per wojewodztwo', 'reset')
+        }
+      ]
+    },
+    {
+      name: 'BDL',
+      filters: []
+    }
+  ]
 </script>
 
 <div class="main-container">
-  <div id="main-left">
+  <div id="main-left" class="ps-5">
     <MapMenu/>
-    <ChartList/>
+    <FiltersTree name="Filtry" tree={filtersTree}/>
   </div>
   <div id="main-right">
     <Synopsis/>
@@ -33,17 +78,30 @@ import Synopsis from '../components/Synopsis.svelte'
   </div>
 </div>
 
-<div class="visualization-container" style="position: absolute;top: 0;left: 0;z-index: 1;width: 100vw;height: 100vh;pointer-events: none;">
+<div class="visualization-container">
 	<ScatterChartAnimation active={$scatterActive}/>
 	<BarChartAnimation active={$barActive}/>
 	<PaperChartAnimation active={$resetActive}/>
 </div>
 
 <style lang="scss">
+  :global {
+
+    #app {
+      background: #ddd;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
   .main-container {
     display: flex;
-    background: #ddd;
+    background: transparent;
     height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
 
     & > * {
       display: flex;
@@ -52,12 +110,18 @@ import Synopsis from '../components/Synopsis.svelte'
       padding: 1rem;
     }
   }
-  #main-left {
-    align-items: center;
+
+  .visualization-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0.25;
   }
-  #main-right {
-    background-color: #ddd;
-  }
+
   #chart-div {
     display: flex;
     align-items: center;

@@ -17,7 +17,7 @@
 	}
 </script>
 
-<div class="d-flex flex-row gap-5 ms-5 map-menu">
+<div class="d-flex flex-row gap-5 map-menu">
 	<div class="map-container">
 		<svg
 				preserveAspectRatio="xMaxYMax meet" style="width: 30vw;" viewBox="0 0 497 463"
