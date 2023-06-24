@@ -14,11 +14,19 @@
     import { barActive, plot, type PlotType, resetActive, scatterActive } from '../store/store'
     import FiltersTree from '../components/FiltersTree.svelte'
     import type { FilterGroup } from '../interfaces/FilterGroup'
+    import { mapStore } from '../store/mapStore';
 
   function changeChart(ch: ChartVisible, anim: PlotType) {
     console.log(ch, anim)
     $currentChart = ch
     plot.toggle(anim)
+
+    if(ch === 'liczba ofert per wojewodztwo'){
+            $mapStore = 'ogolnie';
+        }
+    if (ch === 'miasta oferty') {
+        $mapStore = 'malopolskie';
+    }
   }
 
   const filtersTree: FilterGroup[] = [
@@ -27,6 +35,11 @@
       filters: [
         {
           default: true,
+          name: 'Liczba ofert w każdym województwie',
+          callback: () => changeChart('liczba ofert per wojewodztwo', 'reset')
+        },
+        {
+          default: false,
           name: 'Liczba ofert w zależności od liczby pokoi',
           callback: () => changeChart('liczba pokoi', 'bar')
         },
@@ -45,11 +58,6 @@
           name: 'Cena za pokój w zależności od liczby pokoi',
           callback: () => changeChart('cena za pokoje', 'scatter')
         },
-        {
-          default: false,
-          name: 'Liczba ofert w każdym województwie',
-          callback: () => changeChart('liczba ofert per wojewodztwo', 'reset')
-        }
       ]
     },
     {
