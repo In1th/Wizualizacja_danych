@@ -7,7 +7,6 @@
     import MapMenu from '../components/MapMenu.svelte'
     import Synopsis from '../components/Synopsis.svelte'
     import BarChartAnimation from '../lib/BarChartAnimation.svelte'
-    import ChartList from '../lib/ChartList.svelte'
     import PaperChartAnimation from '../lib/PaperChartAnimation.svelte'
     import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte'
     import { chartData, type ChartVisible, currentChart, currentType } from '../store/chartStore'
@@ -136,12 +135,5 @@
     height: 100vh;
     pointer-events: none;
     opacity: 0.25;
-  }
-
-  #chart-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-block: auto;
   }
 </style>
