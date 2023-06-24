@@ -80,9 +80,9 @@ export type ChartVisible  =
   | 'cena za m2'
   | 'cena za pokoje'
   | 'liczba ofert per wojewodztwo'
-  | 'cena za pokoje ogolnie'
-  | 'cena za m2 ogolnie'
-  | 'liczba pokoi ogolnie'
+  // | 'cena za pokoje ogolnie'
+  // | 'cena za m2 ogolnie'
+  // | 'liczba pokoi ogolnie'
 
 export type ChartType = 
   'polar area'
@@ -97,9 +97,6 @@ const chartMap: {[key: string]: ChartType} = {
     'cena za m2' : 'polar area',
     'cena za pokoje' : 'connected scatter',
     'liczba ofert per wojewodztwo' : 'pie',
-    'cena za pokoje ogolnie' : 'connected scatter',
-    'cena za m2 ogolnie' : 'polar area',
-    'liczba pokoi ogolnie' : 'bubble'
 }
 
 const dataMap = {
@@ -119,23 +116,7 @@ const dataMap = {
     'liczba pokoi zachodniopomorskie': liczba_pokoi_zachodniopomorskie,
     'liczba pokoi warminskomazurskie': liczba_pokoi_warminskomazurskie,
     'liczba pokoi pomorskie': liczba_pokoi_pomorskie,
-
-    'liczba pokoi ogolnie podkarpackie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie malopolskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie slaskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie opolskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie dolnoslaskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie swietokrzyskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie lubelskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie lodzkie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie mazowieckie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie wielkopolskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie lubuskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie kujawskopomorskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie podlaskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie zachodniopomorskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie warminskomazurskie': liczba_pokoi_ogolnie,
-    'liczba pokoi ogolnie pomorskie': liczba_pokoi_ogolnie,
+    'liczba pokoi ogolnie': liczba_pokoi_ogolnie,
 
     'miasta oferty podkarpackie': miasta_oferty_podkarpackie,
     'miasta oferty malopolskie': miasta_oferty_malopolskie,
@@ -170,23 +151,7 @@ const dataMap = {
     'cena za m2 zachodniopomorskie': cena_za_m2_zachodniopomorskie,
     'cena za m2 warminskomazurskie': cena_za_m2_warminsko_mazurskie,
     'cena za m2 pomorskie': cena_za_m2_pomorskie,
-
-    'cena za m2 ogolnie podkarpackie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie malopolskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie slaskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie opolskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie dolnoslaskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie swietokrzyskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie lubelskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie lodzkie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie mazowieckie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie wielkopolskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie lubuskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie kujawskopomorskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie podlaskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie zachodniopomorskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie warminskomazurskie': cena_za_m2_ogolnie,
-    'cena za m2 ogolnie pomorskie': cena_za_m2_ogolnie,
+    'cena za m2 ogolnie': cena_za_m2_ogolnie,
 
     'cena za pokoje podkarpackie': cena_na_pokoje_podkarpackie,
     'cena za pokoje malopolskie': cena_na_pokoje_malopolskie,
@@ -204,40 +169,9 @@ const dataMap = {
     'cena za pokoje zachodniopomorskie': cena_na_pokoje_zachodniopomorskie,
     'cena za pokoje warminskomazurskie': cena_na_pokoje_warminsko_mazurskie,
     'cena za pokoje pomorskie': cena_na_pokoje_pomorskie,
-
-    'cena za pokoje ogolnie podkarpackie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie malopolskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie slaskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie opolskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie dolnoslaskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie swietokrzyskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie lubelskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie lodzkie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie mazowieckie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie wielkopolskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie lubuskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie kujawskopomorskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie podlaskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie zachodniopomorskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie warminskomazurskie': cena_na_pokoje_ogolnie,
-    'cena za pokoje ogolnie pomorskie': cena_na_pokoje_ogolnie,
+    'cena za pokoje ogolnie': cena_na_pokoje_ogolnie,
     
-    'liczba ofert per wojewodztwo podkarpackie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo malopolskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo slaskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo opolskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo dolnoslaskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo swietokrzyskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo lubelskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo lodzkie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo mazowieckie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo wielkopolskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo lubuskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo kujawskopomorskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo podlaskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo zachodniopomorskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo warminskomazurskie': liczba_ofert_per_wojewodztwo,
-    'liczba ofert per wojewodztwo pomorskie': liczba_ofert_per_wojewodztwo
+    'liczba ofert per wojewodztwo ogolnie': liczba_ofert_per_wojewodztwo,
 }
 
 export const currentChart = writable('liczba ofert per wojewodztwo' as ChartVisible)

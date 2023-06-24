@@ -66,10 +66,4 @@
   #main-right {
     background-color: #ddd;
   }
-  #chart-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-block: auto;
-  }
 </style>
