@@ -6,7 +6,7 @@ export const cena_na_pokoje_zachodniopomorskie = {
     ],
     datasets: [
         {
-            label: 'Cena grupowana wedlug ilosci pokoi',
+            label: 'Cena grupowana wedlug ilosci pokoi [Zachodniopomorskie]',
             backgroundColor: [
                 'rgba(247, 70, 74, 0.5)',
                 'rgba(70, 191, 189, 0.5)',

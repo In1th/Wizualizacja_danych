@@ -7,7 +7,7 @@ export const liczba_pokoi_lodzkie = {
     ],
     datasets: [
         {
-            label: 'Ilość ofert w zależności od ilości pokoi',
+            label: 'Ilość ofert w zależności od ilości pokoi [Łódzkie]',
             backgroundColor: 'rgba(194, 116, 161, 0.5)',
             borderColor: 'rgb(194, 116, 161)',
             data: [289, 2395, 2993, 776],

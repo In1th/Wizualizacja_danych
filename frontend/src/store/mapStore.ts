@@ -17,6 +17,7 @@ export type Voivodeship =
     | 'podlaskie'
     | 'zachodniopomorskie'
     | 'warminskomazurskie'
-    | 'pomorskie';
+    | 'pomorskie'
+    | 'ogolnie';
 
-export const mapStore = writable('malopolskie' as Voivodeship)
+export const mapStore = writable('ogolnie' as Voivodeship)

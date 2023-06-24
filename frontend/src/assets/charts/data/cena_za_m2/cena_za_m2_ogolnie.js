@@ -1,13 +1,15 @@
-export const cena_za_m2_lubelskie = {
+export const cena_za_m2_ogolnie = {
     labels: [
+        '1 pokój',
         '2 pokoje',
         '3 pokoje',
         '4 pokoje',
-        '5 pokoi'
+        '5 pokoi',
+        '6 pokoi'
     ],
     datasets: [
         {
-            label: 'Cena za m^2 w zależności od ilości pokoi [Lubelskie]',
+            label: 'Cena za m^2 w zależności od ilości pokoi [w całej Polsce]',
             backgroundColor: [
                 'rgba(247, 70, 74, 0.5)',
                 'rgba(70, 191, 189, 0.5)',
@@ -15,7 +17,7 @@ export const cena_za_m2_lubelskie = {
                 'rgba(148, 159, 177, 0.5)',
                 'rgba(77, 83, 96, 0.5)',
               ],
-            data: [7839.287119, 7559.345433, 9262.235605, 7500.000000],
+            data: [9531.409736, 11164.456193, 9934.206038, 11939.212540, 23272.405921, 8792.497069],
         }
     ],
 };

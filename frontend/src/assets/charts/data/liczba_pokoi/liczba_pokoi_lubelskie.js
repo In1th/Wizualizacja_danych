@@ -7,7 +7,7 @@ export const liczba_pokoi_lubelskie = {
     ],
     datasets: [
         {
-            label: 'Ilość ofert w zależności od ilości pokoi',
+            label: 'Ilość ofert w zależności od ilości pokoi [Lubelskie]',
             backgroundColor: 'rgba(194, 116, 161, 0.5)',
             borderColor: 'rgb(194, 116, 161)',
             data: [3396, 2066, 1136, 1054],

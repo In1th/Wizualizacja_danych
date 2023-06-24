@@ -1,25 +1,36 @@
 <script>
-    import { Pie } from 'svelte-chartjs';
+    import { Line } from 'svelte-chartjs';
     import { chart_css } from './chart_css.js';
-    export let data;
 
+    export let data;
 
     import {
         Chart as ChartJS,
         Title,
         Tooltip,
         Legend,
-        ArcElement,
+        LineElement,
+        LinearScale,
+        PointElement,
         CategoryScale,
     } from 'chart.js';
 
-  ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
+    ChartJS.register(
+        Title,
+        Tooltip,
+        Legend,
+        LineElement,
+        LinearScale,
+        PointElement,
+        CategoryScale
+    );
+
 </script>
 
 <div class="chart-container"
     style = 
         "width: {chart_css.width};">
-    <Pie {data} options={{ responsive: true }} />
+    <Line {data} options={{ responsive: true }} />
 </div>
 
 <style>
@@ -29,5 +40,4 @@
         display: flex !important;
         background-color: #ddd;
     }
-
 </style> 

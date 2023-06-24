@@ -5,7 +5,7 @@ export const liczba_pokoi_kujawskopomorskie = {
     ],
     datasets: [
         {
-            label: 'Ilość ofert w zależności od ilości pokoi',
+            label: 'Ilość ofert w zależności od ilości pokoi [Kujawsko-pomorskie]',
             backgroundColor: 'rgba(194, 116, 161, 0.5)',
             borderColor: 'rgb(194, 116, 161)',
             data: [1882, 3148],

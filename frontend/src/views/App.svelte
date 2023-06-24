@@ -1,17 +1,19 @@
 <script lang="ts">
-  import BarChart from '../assets/charts/BarChart.svelte'
-  import PieChart from '../assets/charts/PieChart.svelte'
-  import PolarAreaChart from '../assets/charts/PolarAreaChart.svelte'
-  import MapMenu from '../components/MapMenu.svelte'
-  import Synopsis from '../components/Synopsis.svelte'
-  import BarChartAnimation from '../lib/BarChartAnimation.svelte'
-  import ChartList from '../lib/ChartList.svelte'
-  import PaperChartAnimation from '../lib/PaperChartAnimation.svelte'
-  import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte'
-  import { chartData, type ChartVisible, currentChart, currentType } from '../store/chartStore'
-  import { barActive, plot, type PlotType, resetActive, scatterActive } from '../store/store'
-  import FiltersTree from '../components/FiltersTree.svelte'
-  import type { FilterGroup } from '../interfaces/FilterGroup'
+    import BarChart from '../assets/charts/BarChart.svelte'
+    import ConnectedScatterChart from '../assets/charts/ConnectedScatterChart.svelte';
+    import BubbleChart from '../assets/charts/ConnectedScatterChart.svelte';
+    import PieChart from '../assets/charts/PieChart.svelte'
+    import PolarAreaChart from '../assets/charts/PolarAreaChart.svelte'
+    import MapMenu from '../components/MapMenu.svelte'
+    import Synopsis from '../components/Synopsis.svelte'
+    import BarChartAnimation from '../lib/BarChartAnimation.svelte'
+    import ChartList from '../lib/ChartList.svelte'
+    import PaperChartAnimation from '../lib/PaperChartAnimation.svelte'
+    import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte'
+    import { chartData, type ChartVisible, currentChart, currentType } from '../store/chartStore'
+    import { barActive, plot, type PlotType, resetActive, scatterActive } from '../store/store'
+    import FiltersTree from '../components/FiltersTree.svelte'
+    import type { FilterGroup } from '../interfaces/FilterGroup'
 
   function changeChart(ch: ChartVisible, anim: PlotType) {
     console.log(ch, anim)
@@ -58,24 +60,30 @@
 </script>
 
 <div class="main-container">
-  <div id="main-left" class="ps-5">
-    <MapMenu/>
-    <FiltersTree name="Filtry" tree={filtersTree}/>
-  </div>
-  <div id="main-right">
-    <Synopsis/>
-    <div id="chart-div">
-      {#if $currentType === 'bar'}
-          <BarChart data={$chartData}/>
-        {/if}
-        {#if $currentType === 'pie'}
-          <PieChart data={$chartData}/>
-        {/if}
-        {#if $currentType === 'polar area'}
-          <PolarAreaChart data={$chartData}/>
-      {/if}
+    <div id="main-left" class="ps-5">
+        <MapMenu/>
+        <FiltersTree name="Filtry" tree={filtersTree}/>
     </div>
-  </div>
+    <div id="main-right">
+        <Synopsis/>
+        <div>
+            {#if $currentType === 'bar'}
+                <BarChart data={$chartData}/>
+            {/if}
+            {#if $currentType === 'pie'}
+                <PieChart data={$chartData}/>
+            {/if}
+            {#if $currentType === 'polar area'}
+                <PolarAreaChart data={$chartData}/>
+            {/if}
+            {#if $currentType === 'bubble'}
+                <BubbleChart data={$chartData}/>
+            {/if}
+            {#if $currentType === 'connected scatter'}
+                <ConnectedScatterChart data={$chartData}/>
+            {/if}
+        </div>
+    </div>
 </div>
 
 <div class="visualization-container">
