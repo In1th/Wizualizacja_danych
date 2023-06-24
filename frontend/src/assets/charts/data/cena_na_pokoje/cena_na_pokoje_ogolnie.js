@@ -9,25 +9,16 @@ export const cena_na_pokoje_ogolnie = {
     ],
     datasets: [
         {
-            label: 'Cena grupowana wedlug ilosci pokoi [w całej Polsce]',
-            fill: true,
-            lineTension: 0.3,
-            backgroundColor: 'rgba(225, 204,230, .3)',
-            borderColor: 'rgb(205, 130, 158)',
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: 'rgb(205, 130,1 58)',
-            pointBackgroundColor: 'rgb(255, 255, 255)',
-            pointBorderWidth: 10,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: 'rgb(0, 0, 0)',
-            pointHoverBorderColor: 'rgba(220, 220, 220,1)',
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
+            label: 'Cena grupowana wedlug ilosci pokoi [Ogolnie]',
+            backgroundColor: [
+                'rgba(247, 70, 74, 0.5)',
+                'rgba(70, 191, 189, 0.5)',
+                'rgba(253, 180, 92, 0.5)',
+                'rgba(148, 159, 177, 0.5)',
+                'rgba(77, 83, 96, 0.5)',
+                'rgba(255, 0, 0, 0.5)',
+                ],
             data: [2.815778e+05, 4.971344e+05, 6.536518e+05, 1.113916e+06, 5.667830e+06, 1.500000e+06],
         }
-    ],
+    ]
 };

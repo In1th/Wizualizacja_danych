@@ -92,14 +92,14 @@ export type ChartType =
   | 'connected scatter'
 
 const chartMap: {[key: string]: ChartType} = {
-    'liczba pokoi' : 'bubble',
+    'liczba pokoi' : 'bar',
     'miasta oferty' : 'bar',
     'cena za m2' : 'polar area',
-    'cena za pokoje' : 'connected scatter',
+    'cena za pokoje' : 'bar',
     'liczba ofert per wojewodztwo' : 'pie',
-    'cena za pokoje ogolnie' : 'connected scatter',
+    'cena za pokoje ogolnie' : 'bar',
     'cena za m2 ogolnie' : 'polar area',
-    'liczba pokoi ogolnie' : 'bubble'
+    'liczba pokoi ogolnie' : 'bar'
 }
 
 const dataMap = {
