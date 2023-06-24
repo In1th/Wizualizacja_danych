@@ -27,6 +27,7 @@
         position: relative;
         z-index: 100;
         display: flex !important;
+        background-color: #ddd;
     }
 
 </style> 

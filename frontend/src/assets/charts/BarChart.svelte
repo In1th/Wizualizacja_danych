@@ -35,5 +35,6 @@
         position: relative;
         z-index: 80;
         display: flex !important;
+        background-color: #ddd;
     }
 </style> 
