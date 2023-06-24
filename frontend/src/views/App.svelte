@@ -90,6 +90,7 @@
                 <ConnectedScatterChart data={$chartData}/>
             {/if}
         </div>
+        <h6 style="opacity: 0.5;">Made with &lt;3 by Mateusz Kruk, Seweryn Jarco, Dawid	Goc and, Kacper	Koniuszy</h6>
     </div>
 </div>
 
@@ -141,5 +142,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  h6 {
+    margin-top: auto;
+    text-align: right;
   }
 </style>
