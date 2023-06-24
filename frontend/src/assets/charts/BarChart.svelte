@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { Bar } from 'svelte-chartjs';
-    import { chart_css } from './chart_css.js';
+  import { Bar } from "svelte-chartjs";
+  import { chart_css } from "./chart_css.js";
 
-    import {
+  import {
     Chart,
     Title,
     Tooltip,
@@ -10,7 +10,7 @@
     BarElement,
     CategoryScale,
     LinearScale,
-  } from 'chart.js';
+  } from "chart.js";
 
   export let data;
 
@@ -24,17 +24,15 @@
   );
 </script>
 
-<div class="chart-container"
-    style = 
-        "width: {chart_css.width};">
-    <Bar {data} options={{ responsive: true }} />
+<div class="chart-container" style="width: {chart_css.width};">
+  <Bar {data} options={{ responsive: true }} />
 </div>
 
 <style>
-    .chart-container {
-        position: relative;
-        z-index: 80;
-        display: flex !important;
-        background-color: #ddd;
-    }
-</style> 
+  .chart-container {
+    position: relative;
+    z-index: 80;
+    display: flex !important;
+    background-color: #ddd;
+  }
+</style>

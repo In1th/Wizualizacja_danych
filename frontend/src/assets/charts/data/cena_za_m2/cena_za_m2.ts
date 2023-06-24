@@ -1,6 +1,4 @@
-import type {
-  ChartDefinition,
-} from "../../../../interfaces/ChartDefinition";
+import type { ChartDefinition } from "../../../../interfaces/ChartDefinition";
 import { cena_za_m2_dolnoslaskie } from "./cena_za_m2_dolnoslaskie";
 import { cena_za_m2_kujawskopomorskie } from "./cena_za_m2_kujawsko_pomorskie";
 import { cena_za_m2_lodzkie } from "./cena_za_m2_lodzkie";
@@ -19,10 +17,7 @@ import { cena_za_m2_warminsko_mazurskie } from "./cena_za_m2_warminsko_mazurskie
 import { cena_za_m2_wielkopolskie } from "./cena_za_m2_wielkopolskie";
 import { cena_za_m2_zachodniopomorskie } from "./cena_za_m2_zachodniopomorskie";
 
-export const cenaZaM2: ChartDefinition<
-  "polarArea",
-  "chart_per_voivodeship"
-> = {
+export const cenaZaM2: ChartDefinition<"polarArea", "chart_per_voivodeship"> = {
   title: "Cena za m² w zależności od ilości pokoi",
   dataType: "chart_per_voivodeship",
   chartType: "polarArea",

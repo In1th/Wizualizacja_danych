@@ -1,6 +1,4 @@
-import type {
-  ChartDefinition,
-} from "../../../../interfaces/ChartDefinition";
+import type { ChartDefinition } from "../../../../interfaces/ChartDefinition";
 
 export const liczbaOfertPerWojewodztwo: ChartDefinition<"pie", "global"> = {
   chartType: "pie",

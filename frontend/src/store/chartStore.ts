@@ -21,7 +21,6 @@ export type ChartVisible =
   | "liczba ofert per wojewodztwo"
   | "demo";
 
-
 const dataMap: Record<
   ChartVisible,
   ChartDefinition<

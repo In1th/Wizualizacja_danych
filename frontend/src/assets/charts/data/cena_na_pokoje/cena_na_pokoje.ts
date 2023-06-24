@@ -1,6 +1,4 @@
-import type {
-  ChartDefinition,
-} from "../../../../interfaces/ChartDefinition";
+import type { ChartDefinition } from "../../../../interfaces/ChartDefinition";
 import { cena_na_pokoje_dolnoslaskie } from "./cena_na_pokoje_dolnoslaskie";
 import { cena_na_pokoje_kujawsko_pomorskie } from "./cena_na_pokoje_kujawsko_pomorskie";
 import { cena_na_pokoje_lodzkie } from "./cena_na_pokoje_lodzkie";
@@ -19,10 +17,7 @@ import { cena_na_pokoje_warminsko_mazurskie } from "./cena_na_pokoje_warminsko_m
 import { cena_na_pokoje_wielkopolskie } from "./cena_na_pokoje_wielkopolskie";
 import { cena_na_pokoje_zachodniopomorskie } from "./cena_na_pokoje_zachodniopomorskie";
 
-export const cenaNaPokoje: ChartDefinition<
-  "bar",
-  "chart_per_voivodeship"
-> = {
+export const cenaNaPokoje: ChartDefinition<"bar", "chart_per_voivodeship"> = {
   title: "Cena grupowana według ilości pokoi",
   chartType: "bar",
   dataType: "chart_per_voivodeship",
