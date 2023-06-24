@@ -35,6 +35,7 @@ import { miasta_oferty_swietokrzyskie } from '../assets/charts/data/miasta_ofert
 import { miasta_oferty_warminskomazurskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_warminsko_mazurskie';
 import { miasta_oferty_wielkopolskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_wielkopolskie';
 import { miasta_oferty_zachodniopomorskie } from '../assets/charts/data/miasta_oferty/miasta_oferty_zachodniopomorskie';
+import { miasta_oferty_ogolnie } from "../assets/charts/data/miasta_oferty/miasta_oferty_ogolnie";
 
 import { cena_za_m2_dolnoslaskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_dolnoslaskie';
 import { cena_za_m2_kujawskopomorskie } from '../assets/charts/data/cena_za_m2/cena_za_m2_kujawsko_pomorskie';
@@ -96,10 +97,7 @@ const chartMap: {[key: string]: ChartType} = {
     'miasta oferty' : 'bar',
     'cena za m2' : 'polar area',
     'cena za pokoje' : 'bar',
-    'liczba ofert per wojewodztwo' : 'pie',
-    'cena za pokoje ogolnie' : 'bar',
-    'cena za m2 ogolnie' : 'polar area',
-    'liczba pokoi ogolnie' : 'bar'
+    'liczba ofert per wojewodztwo' : 'pie'
 }
 
 const dataMap = {
@@ -137,6 +135,7 @@ const dataMap = {
     'miasta oferty zachodniopomorskie': miasta_oferty_zachodniopomorskie,
     'miasta oferty warminskomazurskie': miasta_oferty_warminskomazurskie,
     'miasta oferty pomorskie': miasta_oferty_pomorskie,
+    'miasta oferty ogolnie': miasta_oferty_ogolnie,
 
     'cena za m2 podkarpackie': cena_za_m2_podkarpackie,
     'cena za m2 malopolskie': cena_za_m2_malopolskie,
