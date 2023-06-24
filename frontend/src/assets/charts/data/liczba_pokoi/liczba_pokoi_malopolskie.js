@@ -8,7 +8,7 @@ export const liczba_pokoi_malopolskie = {
     datasets: [
         {
             label: 'Ilość ofert w zależności od ilości pokoi [Małopolskie]',
-            backgroundColor: 'rgba(194, 116, 161, 0.5)',
+            backgroundColor: 'rgba(81, 55, 255, 0.5)',
             borderColor: 'rgb(194, 116, 161)',
             data: [552, 3570, 3678, 4002],
         }

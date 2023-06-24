@@ -23,7 +23,7 @@
     if(ch === 'liczba ofert per wojewodztwo'){
             $mapStore = 'ogolnie';
         }
-    if (ch === 'miasta oferty') {
+    if (ch === 'miasta oferty' && $mapStore === 'ogolnie') {
         $mapStore = 'malopolskie';
     }
   }
@@ -122,9 +122,16 @@
     & > * {
       display: flex;
       flex-direction: column;
-      width: 50%;
       padding: 1rem;
     }
+  }
+
+  #main-left {
+    width: 40%;
+  }
+
+  #main-right{
+    flex: 1;
   }
 
   .visualization-container {

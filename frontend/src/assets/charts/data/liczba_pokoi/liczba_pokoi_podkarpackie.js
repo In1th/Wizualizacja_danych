@@ -8,7 +8,7 @@ export const liczba_pokoi_podkarpackie = {
     datasets: [
         {
             label: 'Ilość ofert w zależności od ilości pokoi [Podkarpackie]',
-            backgroundColor: 'rgba(194, 116, 161, 0.5)',
+            backgroundColor: 'rgba(81, 55, 255, 0.5)',
             borderColor: 'rgb(194, 116, 161)',
             data: [739, 1216, 759, 1788],
         }

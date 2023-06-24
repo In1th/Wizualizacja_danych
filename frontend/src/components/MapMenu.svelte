@@ -125,7 +125,7 @@
 		}
 		
 	  &.selected {
-		fill: #5137ff;
+		fill: rgb(81, 55, 255);
 	  }
 	  }
   }

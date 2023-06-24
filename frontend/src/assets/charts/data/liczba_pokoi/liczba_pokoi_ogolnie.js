@@ -10,7 +10,7 @@ export const liczba_pokoi_ogolnie = {
     datasets: [
         {
             label: 'Ilość ofert w zależności od ilości pokoi [Ogólnie]',
-            backgroundColor: 'rgba(194, 116, 161, 0.5)',
+            backgroundColor: 'rgba(81, 55, 255, 0.5)',
             borderColor: 'rgb(194, 116, 161)',
             data: [6845, 52014, 51226, 20632, 2438, 66],
         }
