@@ -20,7 +20,7 @@ import { cena_na_pokoje_zachodniopomorskie } from "./cena_na_pokoje_zachodniopom
 export const cenaNaPokoje: ChartDefinition<"bar", "chart_per_voivodeship"> = {
   title: "Cena grupowana według ilości pokoi",
   chartType: "bar",
-  dataType: "chart_per_voivodeship",
+  groupingType: "chart_per_voivodeship",
   unit: "zł",
   data: {
     dolnoslaskie: cena_na_pokoje_dolnoslaskie,

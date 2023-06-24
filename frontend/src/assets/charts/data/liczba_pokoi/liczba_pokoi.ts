@@ -19,7 +19,7 @@ import { liczba_pokoi_zachodniopomorskie } from "./liczba_pokoi_zachodniopomorsk
 
 export const liczbaPokoi: ChartDefinition<"bar", "chart_per_voivodeship"> = {
   title: "Ilość ofert w zależności od ilości pokoi",
-  dataType: "chart_per_voivodeship",
+  groupingType: "chart_per_voivodeship",
   chartType: "bar",
   unit: "zł",
   data: {

@@ -5,7 +5,7 @@ export const demo: ChartDefinition<
   "dataset_per_voivodeship"
 > = {
   chartType: "connectedScatter",
-  dataType: "dataset_per_voivodeship",
+  groupingType: "dataset_per_voivodeship",
   title: "Demo",
   unit: "",
   data: {

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { PolarArea } from "svelte-chartjs";
   import { chart_css } from "./chart_css.js";
 

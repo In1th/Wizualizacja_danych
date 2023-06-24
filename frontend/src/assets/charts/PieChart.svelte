@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
   import { Pie } from "svelte-chartjs";
   import { chart_css } from "./chart_css.js";
+
   export let data;
 
   import {

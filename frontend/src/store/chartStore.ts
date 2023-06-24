@@ -6,7 +6,7 @@ import { cenaZaM2 } from "../assets/charts/data/cena_za_m2/cena_za_m2";
 import { cenaNaPokoje } from "../assets/charts/data/cena_na_pokoje/cena_na_pokoje";
 import { liczbaOfertPerWojewodztwo } from "../assets/charts/data/liczba_ofert/liczba_ofert_per_wojewodztwo";
 import {
-  assertDtype as assertDataType,
+  assertGroupingType,
   type ChartDefinition,
 } from "../interfaces/ChartDefinition";
 import { plot, type PlotType } from "./store";
@@ -47,7 +47,7 @@ export const currentChartType = derived(
 
 export const currentDataType = derived(
   currentChart,
-  ($chrt) => dataMap[$chrt].dataType
+  ($chrt) => dataMap[$chrt].groupingType
 );
 
 export const currentVisibleDatasets = derived(
@@ -55,15 +55,15 @@ export const currentVisibleDatasets = derived(
   ([$cc, $ms]) => {
     let def = dataMap[$cc];
 
-    if (assertDataType(def, "global")) {
+    if (assertGroupingType(def, "global")) {
       return [...def.data.datasets.keys()];
-    } else if (assertDataType(def, "chart_per_voivodeship")) {
+    } else if (assertGroupingType(def, "chart_per_voivodeship")) {
       return [
         ...def.data[
           $ms.type === "single" ? <Voivodeship>$ms.value : "ogolnie"
         ].datasets.keys(),
       ];
-    } else if (assertDataType(def, "dataset_per_voivodeship")) {
+    } else if (assertGroupingType(def, "dataset_per_voivodeship")) {
       return def.data.datasets.flatMap((ds, i) =>
         isVoivodeshipSelected(ds.label, $ms) ? [i] : []
       );
@@ -76,15 +76,15 @@ export const chartData: Readable<ChartData> = derived(
   ([$cc, $ms]) => {
     let chart = dataMap[$cc];
 
-    if (chart.dataType === "global") return chart.data;
+    if (chart.groupingType === "global") return chart.data;
 
-    if (chart.dataType === "chart_per_voivodeship" && $ms.type === "single")
+    if (chart.groupingType === "chart_per_voivodeship" && $ms.type === "single")
       return chart.data[<Voivodeship>$ms.value];
 
-    if (chart.dataType === "chart_per_voivodeship" && $ms.type === "none")
+    if (chart.groupingType === "chart_per_voivodeship" && $ms.type === "none")
       return chart.data["ogolnie"];
 
-    if (chart.dataType === "dataset_per_voivodeship") return chart.data;
+    if (chart.groupingType === "dataset_per_voivodeship") return chart.data;
 
     return {};
   }

@@ -19,7 +19,7 @@ import { cena_za_m2_zachodniopomorskie } from "./cena_za_m2_zachodniopomorskie";
 
 export const cenaZaM2: ChartDefinition<"polarArea", "chart_per_voivodeship"> = {
   title: "Cena za m² w zależności od ilości pokoi",
-  dataType: "chart_per_voivodeship",
+  groupingType: "chart_per_voivodeship",
   chartType: "polarArea",
   unit: "zł",
   data: {

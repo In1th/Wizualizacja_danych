@@ -18,7 +18,6 @@
   import { barActive, resetActive, scatterActive } from "../store/store";
   import FiltersTree from "../components/FiltersTree.svelte";
   import type { FilterGroup } from "../interfaces/FilterGroup";
-  import { LogarithmicScale } from "chart.js";
 
   const filtersTree: FilterGroup[] = [
     {

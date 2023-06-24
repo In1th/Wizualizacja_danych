@@ -2,7 +2,7 @@ import type { ChartDefinition } from "../../../../interfaces/ChartDefinition";
 
 export const liczbaOfertPerWojewodztwo: ChartDefinition<"pie", "global"> = {
   chartType: "pie",
-  dataType: "global",
+  groupingType: "global",
   title: "Liczba ofert w województwie",
   unit: "",
   data: {
