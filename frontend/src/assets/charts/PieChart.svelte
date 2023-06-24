@@ -27,7 +27,7 @@
         position: relative;
         z-index: 100;
         display: flex !important;
-        background-color: #ddd;
+        /* background-color: #ddd; */
     }
 
 </style> 

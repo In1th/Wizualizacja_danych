@@ -73,7 +73,7 @@
     </div>
     <div id="main-right">
         <Synopsis/>
-        <div>
+        <div id="chart-content">
             {#if $currentType === 'bar'}
                 <BarChart data={$chartData}/>
             {/if}
@@ -135,5 +135,11 @@
     height: 100vh;
     pointer-events: none;
     opacity: 0.25;
+  }
+
+  #chart-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
