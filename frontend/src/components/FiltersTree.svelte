@@ -1,3 +1,4 @@
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <script lang="ts">
 	import type { FilterGroup } from '../interfaces/FilterGroup'
 	import { onMount } from 'svelte'
@@ -162,5 +163,8 @@
 			font-weight: bold;
 		}
 	}
+}
+.filter-group-items-container {
+	overflow: hidden;
 }
 </style>
