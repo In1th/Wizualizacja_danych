@@ -19,7 +19,7 @@ import { miasta_oferty_zachodniopomorskie } from "./miasta_oferty_zachodniopomor
 
 export const miastaOferty: ChartDefinition<"bar", "chart_per_voivodeship"> = {
   title: "Ilość ofert w danym mieście",
-  dataType: "chart_per_voivodeship",
+  groupingType: "chart_per_voivodeship",
   chartType: "bar",
   unit: "zł",
   data: {
