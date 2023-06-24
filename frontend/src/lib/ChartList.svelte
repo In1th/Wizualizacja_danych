@@ -1,19 +1,5 @@
 <script lang="ts">
-    import { currentChart, type ChartVisible } from "../store/chartStore";
-    import { mapStore } from "../store/mapStore";
-    import { plot, type PlotType } from "../store/store";
-
-    const changeChart = (ch: ChartVisible, anim: PlotType) => {
-        $currentChart = ch;
-        plot.toggle(anim);
-
-        if(ch === 'liczba ofert per wojewodztwo'){
-            $mapStore = 'ogolnie';
-        }
-        if (ch === 'miasta oferty') {
-            $mapStore = 'malopolskie';
-        }
-    }
+  import { changeChart } from "../store/chartStore";
 </script>
 
 <div class="charts-buttons">

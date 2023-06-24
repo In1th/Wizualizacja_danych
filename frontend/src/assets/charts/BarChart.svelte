@@ -1,8 +1,6 @@
-<script>
+<script lang="ts">
     import { Bar } from 'svelte-chartjs';
     import { chart_css } from './chart_css.js';
-
-    export let data;
 
     import {
     Chart,
@@ -13,6 +11,8 @@
     CategoryScale,
     LinearScale,
   } from 'chart.js';
+
+  export let data;
 
   Chart.register(
     Title,

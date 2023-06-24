@@ -1,108 +1,115 @@
 <script lang="ts">
-    import BarChart from '../assets/charts/BarChart.svelte'
-    import ConnectedScatterChart from '../assets/charts/ConnectedScatterChart.svelte';
-    import BubbleChart from '../assets/charts/ConnectedScatterChart.svelte';
-    import PieChart from '../assets/charts/PieChart.svelte'
-    import PolarAreaChart from '../assets/charts/PolarAreaChart.svelte'
-    import MapMenu from '../components/MapMenu.svelte'
-    import Synopsis from '../components/Synopsis.svelte'
-    import BarChartAnimation from '../lib/BarChartAnimation.svelte'
-    import PaperChartAnimation from '../lib/PaperChartAnimation.svelte'
-    import ScatterChartAnimation from '../lib/ScatterChartAnimation.svelte'
-    import { chartData, type ChartVisible, currentChart, currentType } from '../store/chartStore'
-    import { barActive, plot, type PlotType, resetActive, scatterActive } from '../store/store'
-    import FiltersTree from '../components/FiltersTree.svelte'
-    import type { FilterGroup } from '../interfaces/FilterGroup'
-    import { mapStore } from '../store/mapStore';
-
-  function changeChart(ch: ChartVisible, anim: PlotType) {
-    console.log(ch, anim)
-    $currentChart = ch
-    plot.toggle(anim)
-
-    if(ch === 'liczba ofert per wojewodztwo'){
-            $mapStore = 'ogolnie';
-        }
-    if (ch === 'miasta oferty' && $mapStore === 'ogolnie') {
-        $mapStore = 'malopolskie';
-    }
-  }
+  import BarChart from "../assets/charts/BarChart.svelte";
+  import ConnectedScatterChart from "../assets/charts/ConnectedScatterChart.svelte";
+  import BubbleChart from "../assets/charts/BubbleChart.svelte";
+  import PieChart from "../assets/charts/PieChart.svelte";
+  import PolarAreaChart from "../assets/charts/PolarAreaChart.svelte";
+  import MapMenu from "../components/MapMenu.svelte";
+  import Synopsis from "../components/Synopsis.svelte";
+  import BarChartAnimation from "../lib/BarChartAnimation.svelte";
+  import PaperChartAnimation from "../lib/PaperChartAnimation.svelte";
+  import ScatterChartAnimation from "../lib/ScatterChartAnimation.svelte";
+  import {
+    chartData,
+    currentChartType,
+    changeChart,
+    currentVisibleDatasets,
+  } from "../store/chartStore";
+  import { barActive, resetActive, scatterActive } from "../store/store";
+  import FiltersTree from "../components/FiltersTree.svelte";
+  import type { FilterGroup } from "../interfaces/FilterGroup";
+  import { LogarithmicScale } from "chart.js";
 
   const filtersTree: FilterGroup[] = [
     {
-      name: 'Otodom',
+      name: "Otodom",
       filters: [
         {
           default: true,
-          name: 'Liczba ofert w każdym województwie',
-          callback: () => changeChart('liczba ofert per wojewodztwo', 'reset')
+          name: "Liczba ofert w każdym województwie",
+          callback: () => changeChart("liczba ofert per wojewodztwo", "reset"),
         },
         {
           default: false,
-          name: 'Liczba ofert w zależności od liczby pokoi',
-          callback: () => changeChart('liczba pokoi', 'bar')
+          name: "Liczba ofert w zależności od liczby pokoi",
+          callback: () => changeChart("liczba pokoi", "bar"),
         },
         {
           default: false,
-          name: 'Liczba ofert w danym mieście',
-          callback: () => changeChart('miasta oferty', 'bar')
+          name: "Liczba ofert w danym mieście",
+          callback: () => changeChart("miasta oferty", "bar"),
         },
         {
           default: false,
-          html: 'Cena za <math><msup><mi>m</mi><mn>2</mn></msup></math> w zależności od liczby pokoi',
-          callback: () => changeChart('cena za m2', 'scatter')
+          html: "Cena za <math><msup><mi>m</mi><mn>2</mn></msup></math> w zależności od liczby pokoi",
+          callback: () => changeChart("cena za m2", "scatter"),
         },
         {
           default: false,
-          name: 'Cena za pokój w zależności od liczby pokoi',
-          callback: () => changeChart('cena za pokoje', 'scatter')
+          name: "Cena za pokój w zależności od liczby pokoi",
+          callback: () => changeChart("cena za pokoje", "scatter"),
         },
-      ]
+      ],
     },
     {
-      name: 'BDL',
-      filters: []
-    }
-  ]
+      name: "Test",
+      filters: [
+        {
+          default: false,
+          name: "Demo",
+          callback: () => changeChart("demo", "reset"),
+        },
+      ],
+    },
+    {
+      name: "BDL",
+      filters: [],
+    },
+  ];
 </script>
 
 <div class="main-container">
-    <div id="main-left" class="ps-5">
-        <MapMenu/>
-        <FiltersTree name="Filtry" tree={filtersTree}/>
+  <div id="main-left" class="ps-5">
+    <MapMenu />
+    <FiltersTree name="Filtry" tree={filtersTree} />
+  </div>
+  <div id="main-right">
+    <Synopsis />
+    <div id="chart-content">
+      {#if $currentChartType === "bar"}
+        <BarChart data={$chartData} />
+      {/if}
+      {#if $currentChartType === "pie"}
+        <PieChart data={$chartData} />
+      {/if}
+      {#if $currentChartType === "polarArea"}
+        <PolarAreaChart data={$chartData} />
+      {/if}
+      {#if $currentChartType === "bubble"}
+        <BubbleChart data={$chartData} />
+      {/if}
+      {#if $currentChartType === "connectedScatter"}
+        <ConnectedScatterChart
+          data={$chartData}
+          visibleDatasets={$currentVisibleDatasets}
+        />
+      {/if}
     </div>
-    <div id="main-right">
-        <Synopsis/>
-        <div id="chart-content">
-            {#if $currentType === 'bar'}
-                <BarChart data={$chartData}/>
-            {/if}
-            {#if $currentType === 'pie'}
-                <PieChart data={$chartData}/>
-            {/if}
-            {#if $currentType === 'polar area'}
-                <PolarAreaChart data={$chartData}/>
-            {/if}
-            {#if $currentType === 'bubble'}
-                <BubbleChart data={$chartData}/>
-            {/if}
-            {#if $currentType === 'connected scatter'}
-                <ConnectedScatterChart data={$chartData}/>
-            {/if}
-        </div>
-        <h6 style="opacity: 0.5;">Made with ❤️ by Mateusz Kruk, Seweryn Jarco, Dawid	Goc and, Kacper	Koniuszy</h6>
-    </div>
+    <h6 style="opacity: 0.5;">
+      Made with ❤️ by Mateusz Kruk, Seweryn Jarco, Dawid Goc and, Kacper
+      Koniuszy
+    </h6>
+  </div>
 </div>
 
 <div class="visualization-container">
-	<ScatterChartAnimation active={$scatterActive}/>
-	<BarChartAnimation active={$barActive}/>
-	<PaperChartAnimation active={$resetActive}/>
+  <ScatterChartAnimation active={$scatterActive} />
+  <BarChartAnimation active={$barActive} />
+  <PaperChartAnimation active={$resetActive} />
 </div>
 
 <style lang="scss">
   :global {
-
     #app {
       background: #ddd;
       position: relative;
@@ -130,7 +137,7 @@
     width: 40%;
   }
 
-  #main-right{
+  #main-right {
     flex: 1;
   }
 

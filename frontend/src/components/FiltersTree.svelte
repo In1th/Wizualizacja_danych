@@ -45,7 +45,7 @@
 	function choose(groupId: number, filterId: number) {
 		internalTree.forEach((_, gi) => {
 			internalTree[gi].filters.forEach((_, fi) => {
-				internalTree[gi].filters[fi].chosen = fi === filterId
+				internalTree[gi].filters[fi].chosen = gi == groupId && fi === filterId
 			})
 		})
 
