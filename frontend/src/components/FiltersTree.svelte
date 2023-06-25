@@ -118,10 +118,6 @@
 		cursor: pointer;
 	}
 
-	&-name {
-
-	}
-
 	&-count {
 
 		&::before {
