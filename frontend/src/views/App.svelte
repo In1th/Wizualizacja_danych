@@ -18,6 +18,17 @@
   import { barActive, resetActive, scatterActive } from "../store/store";
   import FiltersTree from "../components/FiltersTree.svelte";
   import type { FilterGroup } from "../interfaces/FilterGroup";
+  import { onMount } from 'svelte'
+  import { Modal } from 'bootstrap'
+  import * as pkg from "../../package-lock.json";
+
+  function showAbout(): void {
+      btModal.show()
+  }
+
+  function hideAbout(): void {
+      btModal.hide()
+  }
 
   const filtersTree: FilterGroup[] = [
     {
@@ -65,6 +76,90 @@
       filters: [],
     },
   ];
+
+  let modalEl: HTMLDivElement;
+  let btModal: Modal;
+
+  const modalData = [
+      {
+          name: "Stack technologiczny",
+          items: [
+              {
+                  name: "Svelte",
+                  path: "node_modules/svelte",
+                  version: null,
+                  link: "https://svelte.dev/"
+              },
+              {
+                  name: "TypeScript",
+                  path: "node_modules/typescript",
+                  version: null,
+                  link: "https://www.typescriptlang.org/"
+              },
+              {
+                  name: "Sass",
+                  path: "node_modules/sass",
+                  version: null,
+                  link: "https://sass-lang.com/"
+              },
+              {
+                  name: "Bootstrap",
+                  path: "node_modules/bootstrap",
+                  version: null,
+                  link: "https://getbootstrap.com/"
+              },
+              {
+                  name: "Bootstrap Icons",
+                  path: "node_modules/bootstrap-icons",
+                  version: null,
+                  link: "https://icons.getbootstrap.com/"
+              },
+              {
+                  name: "Chart.js",
+                  path: "node_modules/chart.js",
+                  version: null,
+                  link: "https://www.chartjs.org/"
+              },
+              {
+                  name: "Vercel",
+                  path: null,
+                  version: null,
+                  link: "https://vercel.com/"
+              }
+          ]
+      },
+      {
+          name: "Źródła danych",
+          items: [
+              {
+                  name: "Otodom",
+                  path: null,
+                  version: null,
+                  link: "https://www.otodom.pl/"
+              },
+              {
+                  name: "BDL",
+                  path: null,
+                  version: null,
+                  link: "https://bdl.stat.gov.pl/bdl/start"
+              }
+          ]
+      }
+  ]
+
+  if (pkg) {
+      modalData.forEach(section => section.items.forEach(item => {
+          if (item.path) {
+              item.version = pkg.packages[item.path].version
+          }
+      }))
+  }
+
+  onMount(() => {
+      btModal = new Modal(modalEl, {
+          backdrop: true
+      })
+  })
 </script>
 
 <div class="main-container">
@@ -94,10 +189,10 @@
         />
       {/if}
     </div>
-    <h6 style="opacity: 0.5;">
-      Made with ❤️ by Mateusz Kruk, Seweryn Jarco, Dawid Goc and, Kacper
-      Koniuszy
-    </h6>
+      <div class="d-flex flex-row justify-content-end">
+          <h6 style="opacity: 0.5;">Made with ❤️ by Mateusz Kruk, Seweryn Jarco, Dawid	Goc and, Kacper	Koniuszy</h6>
+          <button class="btn bi-question-square" style="--bs-btn-active-border-color: transparent;" on:click={showAbout}></button>
+      </div>
   </div>
 </div>
 
@@ -105,6 +200,39 @@
   <ScatterChartAnimation active={$scatterActive} />
   <BarChartAnimation active={$barActive} />
   <PaperChartAnimation active={$resetActive} />
+</div>
+
+<div bind:this={modalEl} class="modal fade show">
+    <div class="modal-dialog">
+        <div class="modal-content" style="--bs-modal-bg: #ddd;">
+            <header class="d-flex justify-content-between align-items-center p-3">
+                <div class="d-flex w-100 justify-content-center" style="margin-left: 2.5rem;">
+                    <h4 class="m-0">Meta</h4>
+                </div>
+                <button class="btn bi-x-square" on:click={hideAbout}></button>
+            </header>
+            <div class="p-3 d-flex flex-row justify-content-around pt-0">
+                {#each modalData as section}
+                    <div>
+                        <div>
+                            <header>
+                                <h5>{section.name}</h5>
+                            </header>
+                        </div>
+                        <ul class="p-0 m-0 ps-3">
+                            {#each section.items as item}
+                                <li class="d-flex gap-2" style="list-style: none;margin-bottom: 0.3rem;">
+                                    <span>{item.name}</span>
+                                    {#if item.version} <span>{item.version}</span> {/if}
+                                    {#if item.link} <a href={item.link} class="bi-box-arrow-up-right btn-link btn btn-sm p-0 "></a> {/if}
+                                </li>
+                            {/each}
+                        </ul>
+                    </div>
+                {/each}
+            </div>
+        </div>
+    </div>
 </div>
 
 <style lang="scss">
