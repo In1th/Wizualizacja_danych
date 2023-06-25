@@ -1,7 +1,6 @@
-
 <div>
-	<h1>Wizualizacja stanu rynku nieruchomości w Polsce</h1>
-	<h2>Lata 2017 - 2023</h2>
+  <h1>Wizualizacja stanu rynku nieruchomości w Polsce</h1>
+  <h2>Lata 2017 - 2023</h2>
 </div>
 
 <style lang="scss">

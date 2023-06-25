@@ -1,9 +1,9 @@
 export type Filter = {
-	default: boolean
-	callback: (any) => void
-} & ({ name: string } | { html: string })
+  default: boolean;
+  callback: (any) => void;
+} & ({ name: string } | { html: string });
 
 export interface FilterGroup {
-	name: string
-	filters: Filter[]
+  name: string;
+  filters: Filter[];
 }
