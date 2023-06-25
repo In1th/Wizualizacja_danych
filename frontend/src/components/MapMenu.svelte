@@ -163,6 +163,10 @@
     path {
       fill: #fff;
       transition: fill 0.4s;
+
+      &.selected {
+        fill: rgb(81, 55, 255);
+      }
     }
   }
 
@@ -170,10 +174,6 @@
     path {
       &:hover {
         fill: #9181ff;
-      }
-
-      &.selected {
-        fill: rgb(81, 55, 255);
       }
 
       cursor: pointer;
