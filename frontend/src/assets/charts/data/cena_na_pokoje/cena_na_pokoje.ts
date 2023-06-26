@@ -18,7 +18,7 @@ import { cena_na_pokoje_wielkopolskie } from "./cena_na_pokoje_wielkopolskie";
 import { cena_na_pokoje_zachodniopomorskie } from "./cena_na_pokoje_zachodniopomorskie";
 
 export const cenaNaPokoje: ChartDefinition<"bar", "chart_per_voivodeship"> = {
-  title: "Cena grupowana według ilości pokoi",
+  title: "Cena grupowana według liczby pokoi",
   chartType: "bar",
   groupingType: "chart_per_voivodeship",
   unit: "zł",

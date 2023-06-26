@@ -18,7 +18,7 @@ import { liczba_pokoi_wielkopolskie } from "./liczba_pokoi_wielkopolskie";
 import { liczba_pokoi_zachodniopomorskie } from "./liczba_pokoi_zachodniopomorskie";
 
 export const liczbaPokoi: ChartDefinition<"bar", "chart_per_voivodeship"> = {
-  title: "Ilość ofert w zależności od ilości pokoi",
+  title: "Liczba ofert w zależności od liczby pokoi",
   groupingType: "chart_per_voivodeship",
   chartType: "bar",
   unit: "zł",
