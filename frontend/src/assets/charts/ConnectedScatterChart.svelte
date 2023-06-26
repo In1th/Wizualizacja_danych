@@ -3,9 +3,11 @@
   import { Line } from "svelte-chartjs";
   import { chart_css } from "./chart_css.js";
   import autocolors from "chartjs-plugin-autocolors";
+  import "chartjs-adapter-date-fns";
 
   export let data;
   export let visibleDatasets: number[];
+  export let options: ChartOptions<any>;
 
   import {
     Chart as ChartJS,
@@ -16,6 +18,8 @@
     LinearScale,
     PointElement,
     CategoryScale,
+    TimeScale,
+    type ChartOptions,
   } from "chart.js";
 
   ChartJS.register(
@@ -26,6 +30,8 @@
     LinearScale,
     PointElement,
     CategoryScale,
+    TimeScale,
+    // fnsDateAdapter,
     autocolors
   );
 
@@ -57,6 +63,7 @@
           onClick: (e) => e.native.stopPropagation(),
         },
       },
+      ...options,
     }}
   />
 </div>

@@ -12,8 +12,8 @@ import {
   type CustomChartType,
 } from "../interfaces/ChartDefinition";
 import { plot, type PlotType } from "./store";
-import type { ChartData, ChartType } from "chart.js";
-import { demo } from "../assets/charts/data/demo";
+import type { ChartData, ChartOptions, ChartType } from "chart.js";
+import { medianaCenZaM2 } from "../assets/charts/data/mediana_cen_za_m2";
 
 export type ChartVisible =
   | "liczba pokoi"
@@ -21,18 +21,15 @@ export type ChartVisible =
   | "cena za m2"
   | "cena za pokoje"
   | "liczba ofert per wojewodztwo"
-  | "demo";
+  | "mediana cen za m2";
 
-const dataMap: Record<
-  ChartVisible,
-  ChartDefinition<CustomChartType, ChartGroupingType>
-> = {
+const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "liczba pokoi": liczbaPokoi,
   "miasta oferty": miastaOferty,
   "cena za m2": cenaZaM2,
   "cena za pokoje": cenaNaPokoje,
   "liczba ofert per wojewodztwo": liczbaOfertPerWojewodztwo,
-  demo: demo,
+  "mediana cen za m2": medianaCenZaM2,
 };
 
 export const currentChart = writable(
@@ -47,6 +44,11 @@ export const currentChartType = derived(
 export const currentDataType = derived(
   currentChart,
   ($chrt) => dataMap[$chrt].groupingType
+);
+
+export const currentChartOptions = derived(
+  currentChart,
+  ($chrt) => dataMap[$chrt].options || {}
 );
 
 export const currentVisibleDatasets = derived(

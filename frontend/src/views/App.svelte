@@ -14,6 +14,7 @@
     currentChartType,
     changeChart,
     currentVisibleDatasets,
+    currentChartOptions,
   } from "../store/chartStore";
   import { barActive, resetActive, scatterActive } from "../store/store";
   import FiltersTree from "../components/FiltersTree.svelte";
@@ -62,18 +63,14 @@
       ],
     },
     {
-      name: "Test",
+      name: "BDL",
       filters: [
         {
           default: false,
-          name: "Demo",
-          callback: () => changeChart("demo", "reset"),
+          name: "Mediana cen za m²",
+          callback: () => changeChart("mediana cen za m2", "reset"),
         },
       ],
-    },
-    {
-      name: "BDL",
-      filters: [],
     },
   ];
 
@@ -186,6 +183,7 @@
         <ConnectedScatterChart
           data={$chartData}
           visibleDatasets={$currentVisibleDatasets}
+          options={$currentChartOptions}
         />
       {/if}
     </div>

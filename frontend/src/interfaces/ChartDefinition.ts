@@ -1,4 +1,9 @@
-import type { ChartData, ChartType } from "chart.js";
+import type {
+  ChartData,
+  ChartOptions,
+  ChartType,
+  ScaleChartOptions,
+} from "chart.js";
 import type { Voivodeship } from "../store/mapStore";
 
 export type CustomChartType = ChartType | "connectedScatter";
@@ -35,6 +40,7 @@ export type ChartDefinition<
   chartType: C;
   groupingType: G;
   data: ToChartDataType<C, G>;
+  options?: ChartOptions<ToStockChartType<C>>;
 };
 
 export function assertGroupingType<G extends ChartGroupingType, T>(
@@ -43,3 +49,19 @@ export function assertGroupingType<G extends ChartGroupingType, T>(
 ): def is ChartDefinition<any, G> {
   return def.groupingType === dtype;
 }
+
+export const QUARTER_SCALES: ScaleChartOptions<any> = {
+  scales: {
+    x: {
+      type: "time",
+      time: {
+        displayFormats: {
+          quarter: "yyyy QQQ",
+        },
+        parser: "yyyy-QQQ",
+        unit: "quarter",
+        isoWeekday: false,
+      },
+    },
+  },
+};
