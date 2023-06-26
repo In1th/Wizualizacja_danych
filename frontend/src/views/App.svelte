@@ -355,6 +355,7 @@
     align-items: center;
     justify-content: center;
     margin-block: auto;
+    height: 100%;
   }
 
   h6 {

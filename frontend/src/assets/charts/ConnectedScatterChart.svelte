@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount, type ComponentProps } from "svelte";
   import { Line } from "svelte-chartjs";
-  import { chart_css } from "./chart_css.js";
   import autocolors from "chartjs-plugin-autocolors";
   import "chartjs-adapter-date-fns";
 
@@ -49,12 +48,13 @@
   onMount(() => updateVisibility(chart));
 </script>
 
-<div class="chart-container" style="width: {chart_css.width};">
+<div class="chart-container">
   <Line
     {data}
     bind:chart
     options={{
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           labels: {
@@ -72,7 +72,11 @@
   .chart-container {
     position: relative;
     z-index: 100;
-    display: flex !important;
     background-color: #ddd;
+    flex: 0 0 75%;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
   }
 </style>

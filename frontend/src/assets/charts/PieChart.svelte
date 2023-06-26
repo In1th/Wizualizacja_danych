@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Pie } from "svelte-chartjs";
-  import { chart_css } from "./chart_css.js";
 
   export let data;
 
@@ -16,15 +15,18 @@
   ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 </script>
 
-<div class="chart-container" style="width: {chart_css.width};">
-  <Pie {data} options={{ responsive: true }} />
+<div class="chart-container">
+  <Pie {data} options={{ responsive: true, maintainAspectRatio: false }} />
 </div>
 
 <style>
   .chart-container {
     position: relative;
     z-index: 100;
-    display: flex !important;
-    /* background-color: #ddd; */
+    flex: 0 0 75%;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
   }
 </style>
