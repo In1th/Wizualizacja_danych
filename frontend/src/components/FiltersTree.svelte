@@ -109,7 +109,8 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
-    overflow: scroll;
+    overflow-y: auto;
+    flex: 1;
   }
 
   .filter-root {
@@ -126,9 +127,6 @@
       margin-bottom: 0.5rem;
       user-select: none;
       cursor: pointer;
-    }
-
-    &-name {
     }
 
     &-count {
@@ -200,4 +198,23 @@
   .filter-group-items-container {
     overflow: hidden;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+
+    &-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    &-thumb {
+      background: #888;
+      border-radius: 5px;
+
+      &:hover{
+        background: #555;
+      }
+    }
+  }
+
 </style>
