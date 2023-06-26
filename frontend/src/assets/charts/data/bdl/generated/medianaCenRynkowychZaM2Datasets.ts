@@ -1,4 +1,4 @@
-export const medianaCenZaM2Datasets = [
+export const medianaCenRynkowychZaM2Datasets = [
   {
     label: "malopolskie",
     data: [

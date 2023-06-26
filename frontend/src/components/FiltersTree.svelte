@@ -109,6 +109,7 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
+    overflow: scroll;
   }
 
   .filter-root {
@@ -157,49 +158,46 @@
     user-select: none;
     cursor: pointer;
 
-	&-count {
+    &-count {
+      &::before {
+        content: "(";
+      }
 
-		&::before {
-			content: '(';
-		}
+      &::after {
+        content: ")";
+      }
+    }
 
-		&::after {
-			content: ')';
-		}
-	}
+    &-items-container {
+      max-height: 300px;
+      width: 20vw;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: #8c8c8c #ddd;
+    }
+  }
 
-	&-items-container {
-		max-height: 300px;
-    width: 20vw;
-		overflow-y: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #8c8c8c #ddd;
-	}
-}
+  .filter-item {
+    width: fit-content;
+    list-style: none;
+    margin-bottom: 0.3rem;
+    user-select: none;
+    cursor: pointer;
 
-.filter-item {
-  width: fit-content;
-	list-style: none;
-	margin-bottom: 0.3rem;
-  user-select: none;
-  cursor: pointer;
+    &:hover {
+      .filter-name {
+        font-weight: 550;
+      }
+    }
 
-	&:hover {
-
-		.filter-name {
-			font-weight: 550;
-		}
-	}
-
-	&.chosen {
-
-		.filter-name {
-			font-weight: bold;
-		}
-	}
-}
-.filter-group-items-container {
-	overflow: hidden;
-}
+    &.chosen {
+      .filter-name {
+        font-weight: bold;
+      }
+    }
+  }
+  .filter-group-items-container {
+    overflow: hidden;
+  }
 </style>

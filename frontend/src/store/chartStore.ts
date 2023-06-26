@@ -13,7 +13,20 @@ import {
 } from "../interfaces/ChartDefinition";
 import { plot, type PlotType } from "./store";
 import type { ChartData, ChartOptions, ChartType } from "chart.js";
-import { medianaCenZaM2 } from "../assets/charts/data/mediana_cen_za_m2";
+import {
+  medianaCenRynkowychZaM2,
+  medianaCenRynkowychZaM2Do40,
+  medianaCenRynkowychZaM2Od40Do60,
+  medianaCenRynkowychZaM2Od60Do80,
+  medianaCenRynkowychZaM2Od80,
+} from "../assets/charts/data/bdl/mediana_cen_rynkowych_za_m2";
+import {
+  sredniaCenRynkowychZaM2,
+  sredniaCenRynkowychZaM2Do40,
+  sredniaCenRynkowychZaM2Od40Do60,
+  sredniaCenRynkowychZaM2Od60Do80,
+  sredniaCenRynkowychZaM2Od80,
+} from "../assets/charts/data/bdl/srednia_cen_rynkowych_za_m2";
 
 export type ChartVisible =
   | "liczba pokoi"
@@ -21,7 +34,16 @@ export type ChartVisible =
   | "cena za m2"
   | "cena za pokoje"
   | "liczba ofert per wojewodztwo"
-  | "mediana cen za m2";
+  | "mediana cen rynkowych za m2"
+  | "mediana cen rynkowych za m2 do 40"
+  | "mediana cen rynkowych za m2 od 40 do 60"
+  | "mediana cen rynkowych za m2 od 60 do 80"
+  | "mediana cen rynkowych za m2 od 80"
+  | "srednia cen rynkowych za m2"
+  | "srednia cen rynkowych za m2 do 40"
+  | "srednia cen rynkowych za m2 od 40 do 60"
+  | "srednia cen rynkowych za m2 od 60 do 80"
+  | "srednia cen rynkowych za m2 od 80";
 
 const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "liczba pokoi": liczbaPokoi,
@@ -29,7 +51,16 @@ const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "cena za m2": cenaZaM2,
   "cena za pokoje": cenaNaPokoje,
   "liczba ofert per wojewodztwo": liczbaOfertPerWojewodztwo,
-  "mediana cen za m2": medianaCenZaM2,
+  "mediana cen rynkowych za m2": medianaCenRynkowychZaM2,
+  "mediana cen rynkowych za m2 do 40": medianaCenRynkowychZaM2Do40,
+  "mediana cen rynkowych za m2 od 40 do 60": medianaCenRynkowychZaM2Od40Do60,
+  "mediana cen rynkowych za m2 od 60 do 80": medianaCenRynkowychZaM2Od60Do80,
+  "mediana cen rynkowych za m2 od 80": medianaCenRynkowychZaM2Od80,
+  "srednia cen rynkowych za m2": sredniaCenRynkowychZaM2,
+  "srednia cen rynkowych za m2 do 40": sredniaCenRynkowychZaM2Do40,
+  "srednia cen rynkowych za m2 od 40 do 60": sredniaCenRynkowychZaM2Od40Do60,
+  "srednia cen rynkowych za m2 od 60 do 80": sredniaCenRynkowychZaM2Od60Do80,
+  "srednia cen rynkowych za m2 od 80": sredniaCenRynkowychZaM2Od80,
 };
 
 export const currentChart = writable(
