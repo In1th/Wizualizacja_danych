@@ -2,7 +2,7 @@ export const cena_na_pokoje_warminsko_mazurskie = {
   labels: ["2 pokoje", "3 pokoje"],
   datasets: [
     {
-      label: "Cena grupowana wedlug ilosci pokoi [Warminsko-mazurskie]",
+      label: "Cena grupowana wedlug liczby pokoi [Warminsko-mazurskie]",
       backgroundColor: [
         "rgba(247, 70, 74, 0.5)",
         "rgba(70, 191, 189, 0.5)",

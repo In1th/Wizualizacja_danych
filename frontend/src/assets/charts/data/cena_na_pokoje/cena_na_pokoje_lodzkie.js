@@ -2,7 +2,7 @@ export const cena_na_pokoje_lodzkie = {
   labels: ["1 pokój", "2 pokoje", "3 pokoje", "4 pokoje"],
   datasets: [
     {
-      label: "Cena grupowana wedlug ilosci pokoi [Lodzkie]",
+      label: "Cena grupowana wedlug liczby pokoi [Lodzkie]",
       backgroundColor: [
         "rgba(247, 70, 74, 0.5)",
         "rgba(70, 191, 189, 0.5)",

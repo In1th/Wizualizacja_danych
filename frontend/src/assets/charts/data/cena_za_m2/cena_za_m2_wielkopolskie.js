@@ -2,7 +2,7 @@ export const cena_za_m2_wielkopolskie = {
   labels: ["1 pokój", "2 pokoje", "3 pokoje", "4 pokoje"],
   datasets: [
     {
-      label: "Cena za m^2 w zależności od ilości pokoi [Wielkopolskie]",
+      label: "Cena za m^2 w zależności od liczby pokoi [Wielkopolskie]",
       backgroundColor: [
         "rgba(247, 70, 74, 0.5)",
         "rgba(70, 191, 189, 0.5)",

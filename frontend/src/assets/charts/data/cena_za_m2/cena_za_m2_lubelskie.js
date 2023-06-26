@@ -2,7 +2,7 @@ export const cena_za_m2_lubelskie = {
   labels: ["2 pokoje", "3 pokoje", "4 pokoje", "5 pokoi"],
   datasets: [
     {
-      label: "Cena za m^2 w zależności od ilości pokoi [Lubelskie]",
+      label: "Cena za m^2 w zależności od liczby pokoi [Lubelskie]",
       backgroundColor: [
         "rgba(247, 70, 74, 0.5)",
         "rgba(70, 191, 189, 0.5)",
