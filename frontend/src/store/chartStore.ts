@@ -42,6 +42,13 @@ import {
   sredniaCenaLokali4IzboweIWieksze,
   sredniaCenaLokaliOgolem,
 } from "../assets/charts/data/bdl/srednia_cena_lokali";
+import {
+  liczbaSprzedanychLokali1Izbowe,
+  liczbaSprzedanychLokali2Izbowe,
+  liczbaSprzedanychLokali3Izbowe,
+  liczbaSprzedanychLokali4IzboweIWieksze,
+  liczbaSprzedanychLokaliOgolem,
+} from "../assets/charts/data/bdl/liczba_sprzedanych_lokali";
 
 export type ChartVisible =
   | "liczba pokoi"
@@ -69,7 +76,12 @@ export type ChartVisible =
   | "srednia cena lokali 1 izbowe"
   | "srednia cena lokali 2 izbowe"
   | "srednia cena lokali 3 izbowe"
-  | "srednia cena lokali 4 izbowe i wieksze";
+  | "srednia cena lokali 4 izbowe i wieksze"
+  | "liczba sprzedanych lokali ogolem"
+  | "liczba sprzedanych lokali 1 izbowe"
+  | "liczba sprzedanych lokali 2 izbowe"
+  | "liczba sprzedanych lokali 3 izbowe"
+  | "liczba sprzedanych lokali 4 izbowe i wieksze";
 
 const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "liczba pokoi": liczbaPokoi,
@@ -104,6 +116,12 @@ const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "srednia cena lokali 2 izbowe": sredniaCenaLokali2Izbowe,
   "srednia cena lokali 3 izbowe": sredniaCenaLokali3Izbowe,
   "srednia cena lokali 4 izbowe i wieksze": sredniaCenaLokali4IzboweIWieksze,
+  "liczba sprzedanych lokali ogolem": liczbaSprzedanychLokaliOgolem,
+  "liczba sprzedanych lokali 1 izbowe": liczbaSprzedanychLokali1Izbowe,
+  "liczba sprzedanych lokali 2 izbowe": liczbaSprzedanychLokali2Izbowe,
+  "liczba sprzedanych lokali 3 izbowe": liczbaSprzedanychLokali3Izbowe,
+  "liczba sprzedanych lokali 4 izbowe i wieksze":
+    liczbaSprzedanychLokali4IzboweIWieksze,
 };
 
 export const currentChart = writable(
