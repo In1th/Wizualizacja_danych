@@ -35,6 +35,13 @@ import {
   mieszkaniaOddaneDoUzytkowaniaSpoldzielcze,
   mieszkaniaOddaneDoUzytkowaniaSpoleczneCzynszowe,
 } from "../assets/charts/data/bdl/mieszkania_oddane_do_uzytkowania";
+import {
+  sredniaCenaLokali1Izbowe,
+  sredniaCenaLokali2Izbowe,
+  sredniaCenaLokali3Izbowe,
+  sredniaCenaLokali4IzboweIWieksze,
+  sredniaCenaLokaliOgolem,
+} from "../assets/charts/data/bdl/srednia_cena_lokali";
 
 export type ChartVisible =
   | "liczba pokoi"
@@ -57,7 +64,12 @@ export type ChartVisible =
   | "mieszkania oddane do uzytkowania sprzedaz wynajem"
   | "mieszkania oddane do uzytkowania wynajem"
   | "mieszkania oddane do uzytkowania spoldzielcze"
-  | "mieszkania oddane do uzytkowania spoleczne czynszowe";
+  | "mieszkania oddane do uzytkowania spoleczne czynszowe"
+  | "srednia cena lokali ogolem"
+  | "srednia cena lokali 1 izbowe"
+  | "srednia cena lokali 2 izbowe"
+  | "srednia cena lokali 3 izbowe"
+  | "srednia cena lokali 4 izbowe i wieksze";
 
 const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "liczba pokoi": liczbaPokoi,
@@ -87,6 +99,11 @@ const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
     mieszkaniaOddaneDoUzytkowaniaNaSprzedazWynajem,
   "mieszkania oddane do uzytkowania wynajem":
     mieszkaniaOddaneDoUzytkowaniaNaWynajem,
+  "srednia cena lokali ogolem": sredniaCenaLokaliOgolem,
+  "srednia cena lokali 1 izbowe": sredniaCenaLokali1Izbowe,
+  "srednia cena lokali 2 izbowe": sredniaCenaLokali2Izbowe,
+  "srednia cena lokali 3 izbowe": sredniaCenaLokali3Izbowe,
+  "srednia cena lokali 4 izbowe i wieksze": sredniaCenaLokali4IzboweIWieksze,
 };
 
 export const currentChart = writable(
