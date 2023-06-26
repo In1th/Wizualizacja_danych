@@ -140,8 +140,8 @@
     }
 
     &-items-container {
-      max-height: 300px;
-      width: 20vw;
+      // max-height: 300px;
+      // width: 20vw;
       overflow-y: auto;
       scroll-behavior: smooth;
       scrollbar-width: thin;
@@ -167,8 +167,8 @@
     }
 
     &-items-container {
-      max-height: 300px;
-      width: 20vw;
+      // max-height: 300px;
+      // width: 20vw;
       overflow-y: auto;
       scroll-behavior: smooth;
       scrollbar-width: thin;
@@ -211,10 +211,9 @@
       background: #888;
       border-radius: 5px;
 
-      &:hover{
+      &:hover {
         background: #555;
       }
     }
   }
-
 </style>

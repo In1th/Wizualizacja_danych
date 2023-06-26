@@ -65,3 +65,19 @@ export const QUARTER_SCALES: ScaleChartOptions<any> = {
     },
   },
 };
+
+export const MONTH_SCALES: ScaleChartOptions<any> = {
+  scales: {
+    x: {
+      type: "time",
+      time: {
+        displayFormats: {
+          month: "MMM yyyy",
+        },
+        parser: "yyyy-MM",
+        unit: "month",
+        isoWeekday: false,
+      },
+    },
+  },
+};

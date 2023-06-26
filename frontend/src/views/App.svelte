@@ -123,6 +123,51 @@
           callback: () =>
             changeChart("srednia cen rynkowych za m2 od 80", "reset"),
         },
+        {
+          default: false,
+          name: "Liczba mieszkań oddanych do użytkowania (ogółem)",
+          callback: () =>
+            changeChart("mieszkania oddane do uzytkowania ogolem", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba mieszkań oddanych do użytkowania (komunalne)",
+          callback: () =>
+            changeChart("mieszkania oddane do uzytkowania komunalne", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba mieszkań oddanych do użytkowania (sprzedaż / wynajem)",
+          callback: () =>
+            changeChart(
+              "mieszkania oddane do uzytkowania sprzedaz wynajem",
+              "reset"
+            ),
+        },
+        {
+          default: false,
+          name: "Liczba mieszkań oddanych do użytkowania (wynajem)",
+          callback: () =>
+            changeChart("mieszkania oddane do uzytkowania wynajem", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba mieszkań oddanych do użytkowania (spółdzielcze)",
+          callback: () =>
+            changeChart(
+              "mieszkania oddane do uzytkowania spoldzielcze",
+              "reset"
+            ),
+        },
+        {
+          default: false,
+          name: "Liczba mieszkań oddanych do użytkowania (społeczne czynszowe)",
+          callback: () =>
+            changeChart(
+              "mieszkania oddane do uzytkowania spoleczne czynszowe",
+              "reset"
+            ),
+        },
       ],
     },
   ];
