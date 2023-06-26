@@ -57,7 +57,7 @@
         },
         {
           default: false,
-          name: "Cena za pokój w zależności od liczby pokoi",
+          name: "Cena w zależności od liczby pokoi",
           callback: () => changeChart("cena za pokoje", "scatter"),
         },
       ],
