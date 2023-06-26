@@ -165,6 +165,39 @@
           callback: () =>
             changeChart("srednia cena lokali 4 izbowe i wieksze", "reset"),
         },
+        {
+          default: false,
+          name: "Liczba sprzedanych lokali (ogółem)",
+          callback: () =>
+            changeChart("liczba sprzedanych lokali ogolem", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba sprzedanych lokali (1 izbowe)",
+          callback: () =>
+            changeChart("liczba sprzedanych lokali 1 izbowe", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba sprzedanych lokali (2 izbowe)",
+          callback: () =>
+            changeChart("liczba sprzedanych lokali 2 izbowe", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba sprzedanych lokali (3 izbowe)",
+          callback: () =>
+            changeChart("liczba sprzedanych lokali 3 izbowe", "reset"),
+        },
+        {
+          default: false,
+          name: "Liczba sprzedanych lokali (≥4 izbowe)",
+          callback: () =>
+            changeChart(
+              "liczba sprzedanych lokali 4 izbowe i wieksze",
+              "reset"
+            ),
+        },
       ],
     },
   ];
