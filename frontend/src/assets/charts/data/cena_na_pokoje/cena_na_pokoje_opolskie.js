@@ -2,7 +2,7 @@ export const cena_na_pokoje_opolskie = {
   labels: ["3 pokoje"],
   datasets: [
     {
-      label: "Cena grupowana wedlug ilosci pokoi [Opolskie]",
+      label: "Cena grupowana wedlug liczby pokoi [Opolskie]",
       backgroundColor: [
         "rgba(247, 70, 74, 0.5)",
         "rgba(70, 191, 189, 0.5)",

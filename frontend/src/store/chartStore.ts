@@ -27,6 +27,14 @@ import {
   sredniaCenRynkowychZaM2Od60Do80,
   sredniaCenRynkowychZaM2Od80,
 } from "../assets/charts/data/bdl/srednia_cen_rynkowych_za_m2";
+import {
+  mieszkaniaOddaneDoUzytkowaniaKomunalne,
+  mieszkaniaOddaneDoUzytkowaniaNaSprzedazWynajem,
+  mieszkaniaOddaneDoUzytkowaniaNaWynajem,
+  mieszkaniaOddaneDoUzytkowaniaOgolem,
+  mieszkaniaOddaneDoUzytkowaniaSpoldzielcze,
+  mieszkaniaOddaneDoUzytkowaniaSpoleczneCzynszowe,
+} from "../assets/charts/data/bdl/mieszkania_oddane_do_uzytkowania";
 
 export type ChartVisible =
   | "liczba pokoi"
@@ -43,7 +51,13 @@ export type ChartVisible =
   | "srednia cen rynkowych za m2 do 40"
   | "srednia cen rynkowych za m2 od 40 do 60"
   | "srednia cen rynkowych za m2 od 60 do 80"
-  | "srednia cen rynkowych za m2 od 80";
+  | "srednia cen rynkowych za m2 od 80"
+  | "mieszkania oddane do uzytkowania ogolem"
+  | "mieszkania oddane do uzytkowania komunalne"
+  | "mieszkania oddane do uzytkowania sprzedaz wynajem"
+  | "mieszkania oddane do uzytkowania wynajem"
+  | "mieszkania oddane do uzytkowania spoldzielcze"
+  | "mieszkania oddane do uzytkowania spoleczne czynszowe";
 
 const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "liczba pokoi": liczbaPokoi,
@@ -61,6 +75,18 @@ const dataMap: Record<ChartVisible, ChartDefinition<any, ChartGroupingType>> = {
   "srednia cen rynkowych za m2 od 40 do 60": sredniaCenRynkowychZaM2Od40Do60,
   "srednia cen rynkowych za m2 od 60 do 80": sredniaCenRynkowychZaM2Od60Do80,
   "srednia cen rynkowych za m2 od 80": sredniaCenRynkowychZaM2Od80,
+  "mieszkania oddane do uzytkowania komunalne":
+    mieszkaniaOddaneDoUzytkowaniaKomunalne,
+  "mieszkania oddane do uzytkowania ogolem":
+    mieszkaniaOddaneDoUzytkowaniaOgolem,
+  "mieszkania oddane do uzytkowania spoldzielcze":
+    mieszkaniaOddaneDoUzytkowaniaSpoldzielcze,
+  "mieszkania oddane do uzytkowania spoleczne czynszowe":
+    mieszkaniaOddaneDoUzytkowaniaSpoleczneCzynszowe,
+  "mieszkania oddane do uzytkowania sprzedaz wynajem":
+    mieszkaniaOddaneDoUzytkowaniaNaSprzedazWynajem,
+  "mieszkania oddane do uzytkowania wynajem":
+    mieszkaniaOddaneDoUzytkowaniaNaWynajem,
 };
 
 export const currentChart = writable(

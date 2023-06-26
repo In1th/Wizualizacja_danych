@@ -18,7 +18,7 @@ import { miasta_oferty_wielkopolskie } from "./miasta_oferty_wielkopolskie";
 import { miasta_oferty_zachodniopomorskie } from "./miasta_oferty_zachodniopomorskie";
 
 export const miastaOferty: ChartDefinition<"bar", "chart_per_voivodeship"> = {
-  title: "Ilość ofert w danym mieście",
+  title: "Liczba ofert w danym mieście",
   groupingType: "chart_per_voivodeship",
   chartType: "bar",
   unit: "zł",

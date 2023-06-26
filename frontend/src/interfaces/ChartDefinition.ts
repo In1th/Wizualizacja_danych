@@ -5,6 +5,7 @@ import type {
   ScaleChartOptions,
 } from "chart.js";
 import type { Voivodeship } from "../store/mapStore";
+import { pl } from "date-fns/locale";
 
 export type CustomChartType = ChartType | "connectedScatter";
 export type ChartGroupingType =
@@ -61,6 +62,32 @@ export const QUARTER_SCALES: ScaleChartOptions<any> = {
         parser: "yyyy-QQQ",
         unit: "quarter",
         isoWeekday: false,
+        adapters: {
+          date: {
+            locale: pl,
+          },
+        },
+      },
+    },
+  },
+};
+
+export const MONTH_SCALES: ScaleChartOptions<any> = {
+  scales: {
+    x: {
+      type: "time",
+      time: {
+        displayFormats: {
+          month: "MMM yyyy",
+        },
+        parser: "yyyy-MM",
+        unit: "month",
+        isoWeekday: false,
+      },
+      adapters: {
+        date: {
+          locale: pl,
+        },
       },
     },
   },
