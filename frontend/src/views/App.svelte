@@ -68,35 +68,6 @@
       filters: [
         {
           default: false,
-          name: "Mediana cen rynkowych za m², ogólnie",
-          callback: () => changeChart("mediana cen rynkowych za m2", "reset"),
-        },
-        {
-          default: false,
-          name: "Mediana cen rynkowych za m², <40 m²",
-          callback: () =>
-            changeChart("mediana cen rynkowych za m2 do 40", "reset"),
-        },
-        {
-          default: false,
-          name: "Mediana cen rynkowych za m², 40,1 - 60 m²",
-          callback: () =>
-            changeChart("mediana cen rynkowych za m2 od 40 do 60", "reset"),
-        },
-        {
-          default: false,
-          name: "Mediana cen rynkowych za m², 60,1 - 80 m²",
-          callback: () =>
-            changeChart("mediana cen rynkowych za m2 od 60 do 80", "reset"),
-        },
-        {
-          default: false,
-          name: "Mediana cen rynkowych za m², >80 m²",
-          callback: () =>
-            changeChart("mediana cen rynkowych za m2 od 80", "reset"),
-        },
-        {
-          default: false,
           name: "Średnia cen rynkowych za m², ogólnie",
           callback: () => changeChart("srednia cen rynkowych za m2", "reset"),
         },
@@ -168,6 +139,32 @@
               "mieszkania oddane do uzytkowania spoleczne czynszowe",
               "reset"
             ),
+        },
+        {
+          default: false,
+          name: "Średnia cena lokali (ogółem)",
+          callback: () => changeChart("srednia cena lokali ogolem", "reset"),
+        },
+        {
+          default: false,
+          name: "Średnia cena lokali (1 izbowe)",
+          callback: () => changeChart("srednia cena lokali 1 izbowe", "reset"),
+        },
+        {
+          default: false,
+          name: "Średnia cena lokali (2 izbowe)",
+          callback: () => changeChart("srednia cena lokali 2 izbowe", "reset"),
+        },
+        {
+          default: false,
+          name: "Średnia cena lokali (3 izbowe)",
+          callback: () => changeChart("srednia cena lokali 3 izbowe", "reset"),
+        },
+        {
+          default: false,
+          name: "Średnia cena lokali (≥4 izbowe)",
+          callback: () =>
+            changeChart("srednia cena lokali 4 izbowe i wieksze", "reset"),
         },
       ],
     },
