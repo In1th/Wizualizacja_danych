@@ -22,6 +22,7 @@
   import { onMount } from "svelte";
   import { Modal } from "bootstrap";
   import * as pkg from "../../package-lock.json";
+  import Title from "../components/Title.svelte";
 
   function showAbout(): void {
     btModal.show();
@@ -266,6 +267,7 @@
   </div>
   <div id="main-right">
     <Synopsis />
+    <Title/>
     <div id="chart-content">
       {#if $currentChartType === "bar"}
         <BarChart data={$chartData} />
@@ -339,7 +341,7 @@
                     <a
                       href={item.link}
                       class="bi-box-arrow-up-right btn-link btn btn-sm p-0"
-                    />
+                    > </a>
                   {/if}
                 </li>
               {/each}
